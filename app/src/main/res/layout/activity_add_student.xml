@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true">
+
+
+
+    <LinearLayout
+        android:id="@+id/addstudentlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/studentfname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First name:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addstudentfname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First name of the student"
+            android:inputType="text"/>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/studentmname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Middle name:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addstudentmname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Middle name of the student"
+            android:inputType="text"/>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/studentlname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last name:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addstudentlname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last name of the student"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Department:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:id="@+id/adddepartment"/>
+        <Spinner
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/depttypes">
+        </Spinner>
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/idnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ID:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addidnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ID(Ex:171DE007)"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/studentphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone number:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addstudentphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number of the student"
+            android:inputType="phone"/>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/studentemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail ID:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addstudentemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail ID of the student(abc@xyz.com)"
+            android:inputType="textEmailAddress"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+            <Button
+                android:id="@+id/CancelHost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="20dp"
+                android:text="Cancel"
+                android:textColor="#ffffff"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/NextStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:textSize="15sp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:text="Next" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

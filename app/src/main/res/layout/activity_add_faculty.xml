@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_height="match_parent"
+android:layout_width="match_parent"
+android:fitsSystemWindows="true">
+
+
+
+<LinearLayout
+    android:id="@+id/addstudentlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First name:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/Addfacultyfname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First name of the faculty"
+        android:inputType="text"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/facultymname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Middle name:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/Addfacultymname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Middle name of the faculty"
+        android:inputType="text"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/facultylname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last name:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/Addfacultylname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last name of the faculty"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Department:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:id="@+id/adddepartment"/>
+    <Spinner
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/depttypes">
+    </Spinner>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/facultyphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone number:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/Addfacultyphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone number of the faculty"
+        android:inputType="phone"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/studentemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail ID:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/Addfacultyemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail ID of the faculty(abc@xyz.com)"
+        android:inputType="textEmailAddress"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <Button
+            android:id="@+id/CancelHost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="20dp"
+            android:text="Cancel"
+            android:textColor="#ffffff"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/NextStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:textSize="15sp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="Next" />
+    </RelativeLayout>
+
+
+</LinearLayout>
+</ScrollView>

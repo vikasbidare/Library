@@ -1,10 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.example.library">
+    package="com.example.library">
 
-    <application android:allowBackup="true"
-        android:label="@string/app_name"
+    <application
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Library"
+        android:roundIcon="@drawable/volunteer"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"/>
+        android:theme="@style/AppTheme">
+        <activity android:name=".add_faculty"></activity>
+        <activity android:name=".add_student" />
+        <activity android:name=".add_book" />
+        <activity android:name=".sign_up" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
 </manifest>
