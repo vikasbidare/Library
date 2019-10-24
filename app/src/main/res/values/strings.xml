@@ -36,4 +36,5 @@
     <string name="signUpMobile">Mobile Number</string>
     <string name="signUpPasswordConfirmHint">Confirm Password</string>
     <string name="signUpButton">SUBMIT</string>
+    <string name="itemTextHolder">Item Text</string>
 </resources>
