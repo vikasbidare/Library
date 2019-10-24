@@ -6,12 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
+    android:fitsSystemWindows="true"
     >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue700"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AlertDialog.AppCompat.Light" />
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fillViewport="true"
+        android:layout_below="@id/logintoolbar"
+
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,7 +34,7 @@
                 android:id="@+id/logo"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/volunteer"
+                android:src="@drawable/liblogo"
                 android:layout_centerHorizontal="true"/>
 
             <LinearLayout
@@ -52,7 +64,7 @@
                             app:passwordToggleEnabled="true"
                             app:passwordToggleTint="@color/black">
 
-                            <com.google.android.material.textfield.TextInputEditText
+                            <EditText
                                 android:id="@+id/username"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -62,9 +74,11 @@
                                 android:backgroundTint="@color/blue300"
                                 android:hint="Email Id"
                                 android:inputType="text"
+                                android:textColor="@color/blue300"
                                 android:textSize="20sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
+
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -72,7 +86,7 @@
                             app:passwordToggleEnabled="true"
                             app:passwordToggleTint="@color/black">
 
-                            <com.google.android.material.textfield.TextInputEditText
+                            <EditText
                                 android:id="@+id/password"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -80,8 +94,9 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:backgroundTint="@color/blue300"
-                                android:hint="Password"
+                                android:hint="@string/Passwordhint"
                                 android:inputType="textPassword"
+                                android:textColor="@color/blue300"
                                 android:textSize="20sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -93,7 +108,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="20dp"
                             android:background="@drawable/round_button"
-                            android:text="Sign In"
+                            android:text="@string/Button"
                             android:textColor="#ffffff" />
 
                         <TextView
@@ -101,11 +116,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Forgot Password?"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/ForgotPassword"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:textColor="@color/buttonColor"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="10dp"/>
+                            android:textColor="@color/blue700"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -127,14 +142,14 @@
                         android:textStyle="normal" />
 
                     <TextView
-                        android:id="@+id/signup"
+                        android:id="@+id/signUp"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:text="Sign Up"
                         android:textAllCaps="true"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/blue300"
+                        android:textColor="@color/blue700"
                         android:textStyle="bold" />
                 </LinearLayout>
 
