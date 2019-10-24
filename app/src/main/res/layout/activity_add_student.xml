@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue700"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AlertDialog.AppCompat.Light" />
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,9 +23,6 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true">
-
-
-
     <LinearLayout
         android:id="@+id/addstudentlayout"
         android:layout_width="match_parent"
@@ -16,70 +30,75 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            />
-
         <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/studentfname"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="First name:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:layout_marginTop="20dp"
+            android:text="Student Details"
+            android:textColor="@color/blue300"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
         <EditText
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:id="@+id/Addstudentfname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First name of the student"
+            android:backgroundTint="@color/blue300"
+            android:hint="First Name"
+            android:textColor="@color/black"
             android:inputType="text"/>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/studentmname"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Middle name:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-        <EditText
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:id="@+id/Addstudentmname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Middle name of the student"
+                android:backgroundTint="@color/blue300"
+            android:hint="Middle Name"
+            android:textColor="@color/black"
             android:inputType="text"/>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/studentlname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Last name:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addstudentlname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Last name of the student"
-            android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addstudentlname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue300"
+                android:hint="Last Name"
+                android:textColor="@color/black"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Department:"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blue300"
             android:textSize="18sp"
             android:id="@+id/adddepartment"/>
         <Spinner
@@ -90,61 +109,57 @@
             android:id="@+id/depttypes">
         </Spinner>
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/idnumber"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="ID:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addidnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:hint="ID(Ex:171DE007)"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addidnumber"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="ID(Ex:171DE007)"
-            android:inputType="text" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addstudentphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/studentphone"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone number:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addstudentphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Phone number of the student"
-            android:inputType="phone"/>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/studentemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="E-mail ID:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addstudentemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail ID of the student(abc@xyz.com)"
-            android:inputType="textEmailAddress"/>
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addstudentemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/blue300"
+                android:hint="E-mail ID (abc@xyz.com)"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -162,7 +177,7 @@
                 android:text="Cancel"
                 android:textColor="#ffffff"
                 android:background="@drawable/round_button"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/blue300"
                 android:textSize="15sp"/>
 
             <Button
@@ -173,7 +188,7 @@
                 android:padding="20dp"
                 android:textSize="15sp"
                 android:background="@drawable/round_button"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/blue300"
                 android:textColor="#ffffff"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -183,3 +198,4 @@
 
     </LinearLayout>
 </ScrollView>
+</LinearLayout>

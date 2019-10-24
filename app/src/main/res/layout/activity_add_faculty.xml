@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login"
+    android:fitsSystemWindows="true"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue700"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AlertDialog.AppCompat.Light" />
 <ScrollView
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,60 +33,49 @@ android:fitsSystemWindows="true">
     android:layout_marginBottom="20dp"
     android:orientation="vertical">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        />
-
     <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First name:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+        android:layout_marginTop="20dp"
+        android:text="Faculty Details"
+        android:textColor="@color/blue300"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/Addfacultyfname"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
-        android:hint="First name of the faculty"
+        android:hint="First Name"
+        android:backgroundTint="@color/blue300"
         android:inputType="text"/>
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/facultymname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Middle name:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/Addfacultymname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Middle name of the faculty"
+        android:hint="Middle Name"
+        android:backgroundTint="@color/blue300"
+        android:textColor="@color/black"
         android:inputType="text"/>
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/facultylname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Last name:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/Addfacultylname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last name of the faculty"
+        android:hint="Last Name"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/blue300"
         android:inputType="text"/>
 
     <TextView
@@ -78,9 +84,10 @@ android:fitsSystemWindows="true">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Department:"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/blue300"
         android:textSize="18sp"
         android:id="@+id/adddepartment"/>
+
     <Spinner
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -88,39 +95,27 @@ android:fitsSystemWindows="true">
         android:layout_height="wrap_content"
         android:id="@+id/depttypes">
     </Spinner>
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/facultyphone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone number:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/Addfacultyphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone number of the faculty"
+        android:hint="Phone Number"
+        android:backgroundTint="@color/blue300"
+        android:textColor="@color/black"
         android:inputType="phone"/>
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/studentemail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="E-mail ID:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/Addfacultyemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail ID of the faculty(abc@xyz.com)"
+        android:hint="E-mail ID(abc@xyz.com)"
+        android:backgroundTint="@color/blue300"
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"/>
 
     <RelativeLayout
@@ -139,7 +134,7 @@ android:fitsSystemWindows="true">
             android:text="Cancel"
             android:textColor="#ffffff"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/blue300"
             android:textSize="15sp"/>
 
         <Button
@@ -150,7 +145,7 @@ android:fitsSystemWindows="true">
             android:padding="20dp"
             android:textSize="15sp"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/blue300"
             android:textColor="#ffffff"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -160,3 +155,4 @@ android:fitsSystemWindows="true">
 
 </LinearLayout>
 </ScrollView>
+</LinearLayout>
