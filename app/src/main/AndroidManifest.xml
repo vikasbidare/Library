@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".Login"
             android:label="Library">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +22,7 @@
         <activity android:name=".add_faculty" />
         <activity android:name=".add_student" />
         <activity android:name=".add_book" />
-        <activity android:name=".sign_up" >
-
-        </activity>
+        <activity android:name=".sign_up"></activity>
     </application>
 
 </manifest>
