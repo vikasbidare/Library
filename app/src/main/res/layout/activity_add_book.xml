@@ -178,7 +178,6 @@
                 android:text="Cancel"
                 android:textColor="#ffffff"
                 android:background="@drawable/round_button"
-                android:backgroundTint="@color/colorPrimary"
                 android:textSize="15sp"/>
 
             <Button
@@ -189,7 +188,6 @@
                 android:padding="20dp"
                 android:textSize="15sp"
                 android:background="@drawable/round_button"
-                android:backgroundTint="@color/colorPrimary"
                 android:textColor="#ffffff"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"

@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/blue700"
+        android:layout_marginBottom="20dp"
         android:elevation="4dp"
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/AlertDialog.AppCompat.Light"
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Enter your details"
-                android:textColor="@color/blue700"
+                android:textColor="@color/blue300"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textSize="20sp"
@@ -71,7 +72,7 @@
                     android:backgroundTint="@color/blue300"
                     android:hint="@string/signUpName"
                     android:inputType="textPersonName"
-                    android:textColor="@color/blue300"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,7 +92,7 @@
                     android:backgroundTint="@color/blue300"
                     android:hint="@string/signUpEmail"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/blue300"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +112,7 @@
                     android:backgroundTint="@color/blue300"
                     android:hint="@string/signUpMobile"
                     android:inputType="phone"
-                    android:textColor="@color/blue300"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +132,7 @@
                     android:backgroundTint="@color/blue300"
                     android:hint="@string/Passwordhint"
                     android:inputType="textPassword"
-                    android:textColor="@color/blue300"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -152,7 +153,7 @@
                     android:backgroundTint="@color/blue300"
                     android:hint="@string/signUpPasswordConfirmHint"
                     android:inputType="textPassword"
-                    android:textColor="@color/blue300"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
