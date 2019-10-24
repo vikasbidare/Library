@@ -20,7 +20,9 @@
         <activity android:name=".add_faculty" />
         <activity android:name=".add_student" />
         <activity android:name=".add_book" />
-        <activity android:name=".sign_up" />
+        <activity android:name=".sign_up" >
+
+        </activity>
         <activity android:name=".LoginActivity">
 
         </activity>
