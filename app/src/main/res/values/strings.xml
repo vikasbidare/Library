@@ -25,4 +25,10 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="LoginPage">Login</string>
+    <string name="usernamehint">Email Id</string>
+    <string name="Passwordhint">Password</string>
+    <string name="Button">Login</string>
+    <string name="ForgotPassword">Forgot Password?</string>
 </resources>
