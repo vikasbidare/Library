@@ -23,7 +23,8 @@
             android:text="@string/toolbarTitle"
             android:textColor="#ffffff"
             android:textSize="25sp"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
             />
 
         <ImageView
@@ -195,6 +196,7 @@ android:fitsSystemWindows="true">
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         >
         <Button

@@ -21,7 +21,8 @@
             android:text="@string/toolbarTitle"
             android:textColor="#ffffff"
             android:textSize="25sp"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
             />
 
         <ImageView
