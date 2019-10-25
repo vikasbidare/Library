@@ -43,40 +43,62 @@ android:fitsSystemWindows="true">
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textSize="20sp"
+        android:layout_marginBottom="20dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/Addfacultyfname"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:textColor="@color/black"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:backgroundTint="@color/blue300"
-        android:inputType="text"/>
+        android:layout_marginBottom="20dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultyfname"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:backgroundTint="@color/blue300"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/Addfacultymname"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Middle Name"
-        android:backgroundTint="@color/blue300"
-        android:textColor="@color/black"
-        android:inputType="text"/>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultymname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Middle Name"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/Addfacultylname"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/blue300"
-        android:inputType="text"/>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultylname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/blue300"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_marginLeft="20dp"
@@ -96,27 +118,41 @@ android:fitsSystemWindows="true">
         android:id="@+id/depttypes">
     </Spinner>
 
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/Addfacultyphone"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:backgroundTint="@color/blue300"
-        android:textColor="@color/black"
-        android:inputType="phone"/>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultyphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:inputType="phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/Addfacultyemail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail ID(abc@xyz.com)"
-        android:backgroundTint="@color/blue300"
-        android:textColor="@color/black"
-        android:inputType="textEmailAddress"/>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultyemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail ID(abc@xyz.com)"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
