@@ -67,6 +67,24 @@ android:fitsSystemWindows="true">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultyid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Faculty ID(Ex. F101)"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/black">
@@ -118,23 +136,23 @@ android:fitsSystemWindows="true">
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Department:"
-        android:textColor="@color/blue300"
-        android:textSize="18sp"
-        android:id="@+id/adddepartment"/>
-
-    <Spinner
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/depttypes">
-    </Spinner>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp"
+        app:passwordToggleTint="@color/black">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Addfacultydepartment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Department"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -193,7 +211,7 @@ android:fitsSystemWindows="true">
             android:textSize="15sp"/>
 
         <Button
-            android:id="@+id/NextStep"
+            android:id="@+id/submitbtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -204,7 +222,7 @@ android:fitsSystemWindows="true">
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="5dp"
-            android:text="Next" />
+            android:text="submit" />
     </LinearLayout>
 
 
