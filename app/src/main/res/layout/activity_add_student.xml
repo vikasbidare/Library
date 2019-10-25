@@ -46,6 +46,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addidnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:hint="ID(Ex:171CO101)"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/black">
         <EditText
             android:layout_marginLeft="20dp"
@@ -63,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
             app:passwordToggleTint="@color/black">
             <EditText
             android:layout_marginLeft="20dp"
@@ -80,6 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
             app:passwordToggleTint="@color/black">
             <EditText
                 android:layout_marginLeft="20dp"
@@ -92,45 +114,29 @@
                 android:textColor="@color/black"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Department:"
-            android:textColor="@color/blue300"
-            android:textSize="18sp"
-            android:id="@+id/adddepartment"/>
-        <Spinner
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/depttypes">
-        </Spinner>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
             app:passwordToggleTint="@color/black">
             <EditText
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/Addidnumber"
+                android:id="@+id/Addstudentdepartment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:backgroundTint="@color/blue300"
+                android:hint="Department"
                 android:textColor="@color/black"
-                android:hint="ID(Ex:171DE007)"
-                android:inputType="text" />
+                android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
             app:passwordToggleTint="@color/black">
             <EditText
                 android:layout_marginLeft="20dp"
@@ -148,6 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
             app:passwordToggleTint="@color/black">
             <EditText
                 android:layout_marginLeft="20dp"
@@ -182,7 +189,7 @@
                 android:textSize="15sp"/>
 
             <Button
-                android:id="@+id/NextStep"
+                android:id="@+id/submitbtn"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -193,7 +200,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="5dp"
-                android:text="Next" />
+                android:text="submit" />
         </LinearLayout>
 
 

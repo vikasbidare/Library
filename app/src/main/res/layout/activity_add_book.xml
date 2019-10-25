@@ -28,7 +28,6 @@
         android:id="@+id/addbooklayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         tools:ignore="InvalidId">
 
@@ -44,99 +43,143 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addbooktitle"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:hint="Title"
-            android:backgroundTint="@color/blue300"
-            android:inputType="text"/>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Genre:"
-            android:textColor="@color/blue300"
-            android:textSize="18sp"/>
-        <Spinner
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/types">
-        </Spinner>
+            app:passwordToggleEnabled="true"
+            android:layout_marginBottom="20dp"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addbookid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Book ID (Ex. B101)"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/Addauthorname"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Name of the Author"
-            android:backgroundTint="@color/blue300"
-            android:textColor="@color/black"
-            android:inputType="text" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addbooktitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Title"
+                android:backgroundTint="@color/blue300"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/addbookedition"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:backgroundTint="@color/blue300"
-            android:textColor="@color/black"
-            android:hint="The Edition of the book(Number)"
-            android:inputType="number" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addbookgenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Genre/Subject"
+                android:backgroundTint="@color/blue300"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/addbookpublication"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:textColor="@color/black"
-            android:hint="Publisher"
-            android:backgroundTint="@color/blue300"
-            android:inputType="number" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/Addauthorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name of the Author"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/addbookyear"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:textColor="@color/black"
-            android:hint="Year of Publication"
-            android:backgroundTint="@color/blue300"
-            android:inputType="number" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/addbookedition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:backgroundTint="@color/blue300"
+                android:textColor="@color/black"
+                android:hint="The Edition of the book(Number)"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/addbookprice"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:backgroundTint="@color/blue300"
-            android:textColor="@color/black"
-            android:hint="Price"
-            android:inputType="number" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/addbookpublication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:hint="Publisher"
+                android:backgroundTint="@color/blue300"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/addbookyear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:hint="Year of Publication"
+                android:backgroundTint="@color/blue300"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,7 +202,7 @@
                 android:textSize="15sp"/>
 
             <Button
-                android:id="@+id/NextStep"
+                android:id="@+id/submitbtn"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -170,7 +213,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="5dp"
-                android:text="Next" />
+                android:text="submit" />
         </LinearLayout>
 
 
