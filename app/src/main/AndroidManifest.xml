@@ -11,8 +11,7 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editfacultyinfo"></activity>
-        <activity android:name=".editstudentinfo" />
+        <activity android:name=".editinfo"></activity>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Login"
