@@ -38,4 +38,7 @@
     <string name="signUpButton">SUBMIT</string>
     <string name="itemTextHolder">Item Text</string>
     <string name="mainActivityLogout">Logout</string>
+    <string name="editStudent">Edit Student Info</string>
+    <string name="editfaculty">Edit Faculty Info</string>
+    <string name="editbook">Edit Book Info</string>
 </resources>

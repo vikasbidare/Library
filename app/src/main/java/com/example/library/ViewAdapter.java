@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.DataClassViewH
 
         holder.imageView.setImageResource(items.get(position).getImage());
         holder.textview.setText(items.get(position).getTitle());
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        holder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = items.get(position).getIntent();
@@ -57,10 +58,12 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.DataClassViewH
     public class DataClassViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textview;
+        CardView cardview;
         public DataClassViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.itemImageHolder);
             textview=itemView.findViewById(R.id.itemTextHolder);
+            cardview = itemView.findViewById(R.id.cardView);
         }
     }
 }
