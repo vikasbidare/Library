@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue700"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AlertDialog.AppCompat.Light" />
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,35 +32,35 @@
         android:orientation="vertical"
         tools:ignore="InvalidId">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            />
-
         <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/booktitle"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:layout_marginTop="20dp"
+            android:text="Book Details"
+            android:textColor="@color/blue300"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <EditText
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:id="@+id/Addbooktitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title of the book"
+            android:textColor="@color/black"
+            android:hint="Title"
+            android:backgroundTint="@color/blue300"
             android:inputType="text"/>
         <TextView
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Genre of the book:"
-            android:textColor="@color/colorPrimary"
+            android:text="Genre:"
+            android:textColor="@color/blue300"
             android:textSize="18sp"/>
         <Spinner
             android:layout_marginLeft="20dp"
@@ -53,17 +70,6 @@
             android:id="@+id/types">
         </Spinner>
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/AuthorName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Author:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
-
         <EditText
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -72,17 +78,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Name of the Author"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
             android:inputType="text" />
-
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/bookedition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edition:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
 
         <EditText
             android:layout_marginLeft="20dp"
@@ -93,18 +91,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="The edition of the book(Number)"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:hint="The Edition of the book(Number)"
             android:inputType="number" />
-
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/bookpublication"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Publisher:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
 
         <EditText
             android:layout_marginLeft="20dp"
@@ -115,18 +105,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="The publisher of the book"
+            android:textColor="@color/black"
+            android:hint="Publisher"
+            android:backgroundTint="@color/blue300"
             android:inputType="number" />
-
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/bookyear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Year:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
 
         <EditText
             android:layout_marginLeft="20dp"
@@ -137,18 +119,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="The year of publication"
+            android:textColor="@color/black"
+            android:hint="Year of Publication"
+            android:backgroundTint="@color/blue300"
             android:inputType="number" />
-
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/bookprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Price:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
 
         <EditText
             android:layout_marginLeft="20dp"
@@ -159,7 +133,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="The price of the book"
+            android:backgroundTint="@color/blue300"
+            android:textColor="@color/black"
+            android:hint="Price"
             android:inputType="number" />
 
         <RelativeLayout
@@ -197,3 +173,4 @@
 
     </LinearLayout>
 </ScrollView>
+</LinearLayout>
