@@ -11,7 +11,11 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editinfo"></activity>
+        <activity android:name=".returnfaculty"></activity>
+        <activity android:name=".returnstudent" />
+        <activity android:name=".issuetofaculty" />
+        <activity android:name=".issuetostudent" />
+        <activity android:name=".editinfo" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Login"
