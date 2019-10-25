@@ -41,4 +41,9 @@
     <string name="editStudent">Edit Student Info</string>
     <string name="editfaculty">Edit Faculty Info</string>
     <string name="editbook">Edit Book Info</string>
+    <string name="signUpPage">SignUp</string>
+    <string name="editInfoPage">Edit Info</string>
+    <string name="addStudentPage">Add Student</string>
+    <string name="addFacultyPage">Add Faculty</string>
+    <string name="addBook">Add Book</string>
 </resources>
