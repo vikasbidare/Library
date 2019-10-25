@@ -37,4 +37,5 @@
     <string name="signUpPasswordConfirmHint">Confirm Password</string>
     <string name="signUpButton">SUBMIT</string>
     <string name="itemTextHolder">Item Text</string>
+    <string name="mainActivityLogout">Logout</string>
 </resources>

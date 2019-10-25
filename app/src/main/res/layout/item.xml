@@ -26,13 +26,14 @@
                 android:layout_width="280dp"
                 android:layout_height="280dp"
                 android:id="@+id/itemImageHolder"
-                android:src="@drawable/liblogo"
+                android:src="@drawable/add_book"
                 android:scaleType="centerCrop"/>
             <TextView
+                android:id="@+id/itemTextHolder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/itemTextHolder"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 android:textColor="@color/blue300"
                 android:layout_marginTop="22dp"
                 />
