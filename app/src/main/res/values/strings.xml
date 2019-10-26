@@ -43,4 +43,8 @@
     <string name="editbook">Edit Book Info</string>
     <string name="signUpPage">SignUp</string>
     <string name="toolbarTitle">Bookeazy</string>
+    <string name="resetPassword">Reset Password</string>
+    <string name="newPasswordHint">New Password</string>
+    <string name="confirmNewPassword">Confirm New Password</string>
+    <string name="resetPasswordBtn">Reset</string>
 </resources>
