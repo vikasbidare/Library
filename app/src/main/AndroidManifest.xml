@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.library">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +8,9 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".show_history"></activity>
+        <activity android:name=".student_history"></activity>
+        <activity android:name=".history_for" />
+        <activity android:name=".show_history" />
         <activity android:name=".show_book" />
         <activity android:name=".return_from_both" />
         <activity android:name=".issue_to_both" />

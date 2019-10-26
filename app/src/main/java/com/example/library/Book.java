@@ -30,12 +30,4 @@ public class Book {
         mbookAuthor = bookAuthor;
         missued = issued;
     }
-
-    public Book()
-    {
-        mbookTitle = null;
-        mbookId = null;
-        mbookAuthor = null;
-        missued = null;
-    }
 }
