@@ -27,7 +27,7 @@ public class history_for extends AppCompatActivity {
         facultyHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToFacultyHistory = new Intent(history_for.this,editfacultyinfo.class);
+                Intent intentToFacultyHistory = new Intent(history_for.this,faculty_history.class);
                 startActivity(intentToFacultyHistory);
             }
         });
