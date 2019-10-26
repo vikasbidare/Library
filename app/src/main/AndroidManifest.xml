@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".show_book"></activity>
+        <activity android:name=".show_history"></activity>
+        <activity android:name=".show_book" />
         <activity android:name=".return_from_both" />
         <activity android:name=".issue_to_both" />
         <activity android:name=".ForgotPassword" />
