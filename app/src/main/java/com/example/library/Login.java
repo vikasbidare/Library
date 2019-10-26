@@ -71,8 +71,5 @@ public class Login extends AppCompatActivity {
                 startActivity(intentToForgotPassword);
             }
         });
-
-
-
     }
 }
