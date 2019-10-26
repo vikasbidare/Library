@@ -2,12 +2,24 @@ package com.example.library;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class show_students extends AppCompatActivity {
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intenttoMain = new Intent(show_students.this,MainActivity.class);
+        startActivity(intenttoMain);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +34,18 @@ public class show_students extends AppCompatActivity {
         publics.add(new Designation("dFFavi","email@com","46323467890","CSE","s104"));
         publics.add(new Designation("SFEvi","email@com","97887567890","Civil","s105"));
         publics.add(new Designation("SFEeFi","email@com","66434567890","Mech","s106"));
-
-
-
         ListView studentView = (ListView) findViewById(R.id.showStudentsListView);
         PersonAdapter madapter = new PersonAdapter(show_students.this,0,publics);
         studentView.setAdapter(madapter);
+
+        studentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(show_students.this, "Selected"+position, Toast.LENGTH_SHORT).show();
+                Intent intentToshowstudentinfo = new Intent(show_students.this,student_single_info.class);
+                startActivity(intentToshowstudentinfo);
+            }
+        });
     }
 }

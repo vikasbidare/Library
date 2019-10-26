@@ -51,7 +51,7 @@
                             android:id="@+id/profilename"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BinaryWarriors"
+                            android:text="Walter H White"
                             android:textStyle="bold"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                             android:layout_marginTop="60dp"
@@ -60,7 +60,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="yourmail@gmail.com"
+                            android:text="hiesenberg@gmail.com"
                             android:id="@+id/profileemail"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:layout_gravity="center_horizontal"/>
@@ -69,7 +69,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/profilephno"
-                            android:text="1234456789"
+                            android:text="9731807101"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:layout_gravity="center_horizontal"/>
                     </LinearLayout>

@@ -40,7 +40,7 @@
         android:fitsSystemWindows="true">
 
         <LinearLayout
-            android:id="@+id/addbooklayout"
+            android:id="@+id/singlebooklayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Book return by student"
+                android:text="Book Information"
                 android:textColor="@color/blue300"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -68,11 +68,11 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuebookid"
+                    android:id="@+id/bookinfoid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Book ID (Ex. B101)"
                     android:backgroundTint="@color/blue300"
+                    android:hint="Book ID"
                     android:textColor="@color/black"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -86,11 +86,47 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuestudentid"
+                    android:id="@+id/bookinfotitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:hint="Student ID (Ex. 171CO101)"
+                    android:backgroundTint="@color/blue300"
+                    android:hint="Title"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfoedition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Edition"
+                    android:backgroundTint="@color/blue300"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfoauthor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Author"
                     android:backgroundTint="@color/blue300"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -104,11 +140,83 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuedate"
+                    android:id="@+id/bookinfogenre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:hint="Return date (YYYY-MM-DD)"
+                    android:hint="Genre"
+                    android:backgroundTint="@color/blue300"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfopublisher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Publisher"
+                    android:backgroundTint="@color/blue300"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfoyear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Year of Publication"
+                    android:backgroundTint="@color/blue300"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfoprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Price"
+                    android:backgroundTint="@color/blue300"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/bookinfoissued"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Whether Issued?"
                     android:backgroundTint="@color/blue300"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -122,13 +230,13 @@
                 android:layout_marginBottom="20dp"
                 >
                 <Button
-                    android:id="@+id/studentprocessbtn"
+                    android:id="@+id/bookinfobackbtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:text="Process"
+                    android:text="Back"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="20dp"
                     android:textColor="#ffffff"
@@ -136,66 +244,6 @@
                     android:textSize="15sp"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/returnStudentLayout">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_marginBottom="20dp"
-                android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black">
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/studentFineAmt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:hint="@string/Fine"
-                    android:backgroundTint="@color/blue300"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal"
-                >
-                <Button
-                    android:id="@+id/returnStudentCancelBtn"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:text="Cancel"
-                    android:layout_marginRight="5dp"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/round_button"
-                    android:textSize="15sp"/>
-
-                <Button
-                    android:id="@+id/returnStudentSubmitBtn"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="15sp"
-                    android:background="@drawable/round_button"
-                    android:textColor="#ffffff"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginLeft="5dp"
-                    android:text="submit" />
-            </LinearLayout></LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

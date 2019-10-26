@@ -41,6 +41,8 @@ public class StudentAdapter extends ArrayAdapter<History> {
         issueddate.setText(mhistory.get(position).getmIssueDate());
         fineamount.setText(mhistory.get(position).getmFineAmount());
 
+
+
         return convertView;
     }
 }

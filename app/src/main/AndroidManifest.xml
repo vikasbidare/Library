@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".show_faculty"></activity>
+        <activity android:name=".book_single_info"></activity>
+        <activity android:name=".student_single_info" />
+        <activity android:name=".show_faculty" />
         <activity android:name=".show_students" />
         <activity android:name=".faculty_history" />
         <activity android:name=".student_history" />

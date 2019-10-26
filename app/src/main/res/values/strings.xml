@@ -54,8 +54,8 @@
     <string name="Fine">Fine Amount</string>
     <string name="showBook">Show Books</string>
     <string name="showHistory">Show History</string>
-    <string name="studentHistory">History For Student</string>
-    <string name="facultyHistory">History For Faculty</string>
+    <string name="studentHistory">Students issue history</string>
+    <string name="facultyHistory">Faculty issue history</string>
     <string name="showStudents">Show Students</string>
     <string name="showFaculty">Show Faculty</string>
 </resources>
