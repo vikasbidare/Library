@@ -52,4 +52,5 @@
     <string name="returnStudent">Return by Student</string>
     <string name="returnfaculty">Return By Faculty</string>
     <string name="Fine">Fine Amount</string>
+    <string name="showBook">Show Books</string>
 </resources>
