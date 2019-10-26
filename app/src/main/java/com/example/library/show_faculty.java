@@ -23,8 +23,6 @@ public class show_faculty extends AppCompatActivity {
         publics.add(new Designation("SFEvi","email@com","97887567890","Civil","f105"));
         publics.add(new Designation("SFEeFi","email@com","66434567890","Mech","f106"));
 
-
-
         ListView studentView = (ListView) findViewById(R.id.showFacultyListView);
         ShowPersonAdapter madapter = new ShowPersonAdapter(show_faculty.this,0,publics);
         studentView.setAdapter(madapter);
