@@ -120,8 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
                 >
                 <Button
                     android:id="@+id/studentprocessbtn"
@@ -132,11 +132,72 @@
                     android:layout_alignParentStart="true"
                     android:text="Process"
                     android:layout_marginRight="5dp"
+                    android:layout_marginBottom="20dp"
                     android:textColor="#ffffff"
                     android:background="@drawable/round_button"
                     android:textSize="15sp"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/returnStudentLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/studentFineAmt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="@string/Fine"
+                    android:backgroundTint="@color/blue300"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/returnStudentCancelBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="Cancel"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/round_button"
+                    android:textSize="15sp"/>
+
+                <Button
+                    android:id="@+id/returnStudentSubmitBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:background="@drawable/round_button"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="submit" />
+            </LinearLayout></LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
