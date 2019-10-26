@@ -47,4 +47,6 @@
     <string name="newPasswordHint">New Password</string>
     <string name="confirmNewPassword">Confirm New Password</string>
     <string name="resetPasswordBtn">Reset</string>
+    <string name="issueStudent">Issue To Student</string>
+    <string name="issueFaculty">Issue To Faculty</string>
 </resources>

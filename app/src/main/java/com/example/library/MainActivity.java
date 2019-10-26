@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             items.add(new DataClass(R.drawable.add_book,"Add Book",new Intent(MainActivity.this,add_book.class) ));
             items.add(new DataClass(R.drawable.student,"Add Student",new Intent(MainActivity.this,add_student.class) ));
             items.add(new DataClass(R.drawable.teacher,"Add Faculty",new Intent(MainActivity.this,add_faculty.class) ));
-            items.add(new DataClass(R.drawable.issue_book,"Issue Book",new Intent(MainActivity.this,add_book.class) ));
+            items.add(new DataClass(R.drawable.issue_book,"Issue Book",new Intent(MainActivity.this,issue_to_both.class) ));
             items.add(new DataClass(R.drawable.return_book,"Return Book",new Intent(MainActivity.this,add_book.class)));
             items.add(new DataClass(R.drawable.edit_info,"Edit Info",new Intent(MainActivity.this,editinfo.class)));
             items.add(new DataClass(R.drawable.show_book,"Show Book",new Intent(MainActivity.this,add_book.class) ));

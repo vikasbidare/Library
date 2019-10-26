@@ -33,7 +33,7 @@ public class ForgotPassword extends AppCompatActivity {
         super.onDestroy();
 
 
-        ProgressBar signUpProgressBar = (ProgressBar) findViewById(R.id.signUpProgressBar);
+        ProgressBar signUpProgressBar = (ProgressBar) findViewById(R.id.resetPasswordProgressBar);
 
         if(signUpProgressBar.getVisibility() == View.VISIBLE ||signUpProgressBar.getVisibility() == View.INVISIBLE)
             signUpProgressBar.setVisibility(View.GONE);
