@@ -24,7 +24,7 @@ public class editinfo extends AppCompatActivity {
         });
 
         Button editfaculty = (Button) findViewById(R.id.editfacultybtn);
-        editstudent.setOnClickListener(new View.OnClickListener() {
+        editfaculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in2 = new Intent(editinfo.this,editfacultyinfo.class);
