@@ -20,6 +20,8 @@
         <activity android:name=".issuetostudent" />
         <activity android:name=".editinfo" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".editfacultyinfo" />
+        <activity android:name=".editstudentinfo" />
         <activity
             android:name=".Login"
             android:label="Library">

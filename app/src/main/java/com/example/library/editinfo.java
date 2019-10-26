@@ -14,7 +14,7 @@ public class editinfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editinfo);
 
-        Button editstudent = (Button) findViewById(R.id.editstudentbtn);
+        Button editstudent = (Button) findViewById(R.id.editstudentInfobtn);
         editstudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +23,7 @@ public class editinfo extends AppCompatActivity {
             }
         });
 
-        Button editfaculty = (Button) findViewById(R.id.editfacultybtn);
+        Button editfaculty = (Button) findViewById(R.id.editfacultyInfobtn);
         editfaculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +31,7 @@ public class editinfo extends AppCompatActivity {
                 startActivity(in2);
             }
         });
-    }
+  }
 
 
 
