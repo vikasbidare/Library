@@ -70,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Enter your details"
+                android:layout_marginBottom="20dp"
                 android:textColor="@color/blue300"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -180,10 +181,13 @@
 
             <Button
                 android:id="@+id/signUpButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/round_button"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:textColor="#ffffff"
                 android:text="@string/signUpButton" />
 
