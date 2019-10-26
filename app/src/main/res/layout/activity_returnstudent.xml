@@ -54,6 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:text="Book retrurn by student"
                 android:textColor="@color/blue300"
                 android:textAlignment="center"
