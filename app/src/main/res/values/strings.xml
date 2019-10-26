@@ -57,4 +57,5 @@
     <string name="studentHistory">History For Student</string>
     <string name="facultyHistory">History For Faculty</string>
     <string name="showStudents">Show Students</string>
+    <string name="showFaculty">Show Faculty</string>
 </resources>
