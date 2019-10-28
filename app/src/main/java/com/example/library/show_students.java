@@ -38,14 +38,5 @@ public class show_students extends AppCompatActivity {
         PersonAdapter madapter = new PersonAdapter(show_students.this,0,publics);
         studentView.setAdapter(madapter);
 
-        studentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(show_students.this, "Selected"+position, Toast.LENGTH_SHORT).show();
-                Intent intentToshowstudentinfo = new Intent(show_students.this,student_single_info.class);
-                startActivity(intentToshowstudentinfo);
-            }
-        });
     }
 }
