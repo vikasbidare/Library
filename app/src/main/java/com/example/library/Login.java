@@ -19,10 +19,13 @@ public class Login extends AppCompatActivity {
     String password;
     int flag=0;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    DatabaseHelperClass myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        myDB = new DatabaseHelperClass(Login.this);
 
         TextView signUp = (TextView) findViewById(R.id.signUp);
         final EditText Username = findViewById(R.id.username);

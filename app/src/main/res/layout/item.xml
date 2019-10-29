@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="182dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        app:cardElevation="60dp"
-        app:cardCornerRadius="12dp"
-        android:layout_margin="12dp"
         android:id="@+id/cardView"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="60dp">
+
         <LinearLayout
+            android:id="@+id/itemLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-            android:padding="16dp"
-            android:id="@+id/itemLayout">
+            android:orientation="vertical"
+            android:padding="16dp">
+
             <ImageView
+                android:id="@+id/itemImageHolder"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:id="@+id/itemImageHolder"
-                android:src="@drawable/add_book"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_book" />
+
             <TextView
                 android:id="@+id/itemTextHolder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/itemTextHolder"
-                android:textSize="18sp"
-                android:textColor="@color/blue300"
                 android:layout_marginTop="22dp"
-                />
+                android:text="@string/itemTextHolder"
+                android:textColor="@color/blue300"
+                android:textSize="18sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
