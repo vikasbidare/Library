@@ -47,6 +47,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     private String adminTableID = "aID";
     private String adminTableNAME = "name";
+    private String adminTableNUMBER= "phone" ;
 
     private String loginTableUID = "uID";
     private String loginTablePASSWORD = "password";
@@ -71,7 +72,8 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
                 + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(10),"  + bookTableYEAR+"  varchar(4))");
 
 
-        db.execSQL("create table "+adminTable+"("+adminTableID+" varchar(10) primary key, "+adminTableNAME +" varchar(10))");
+        db.execSQL("create table "+adminTable+"("+adminTableID+" varchar(10) primary key, "+adminTableNAME +" varchar(10), "
+                +adminTableNUMBER+" varchar(10))");
 
         db.execSQL("create table "+loginTable+"("+loginTableUID+" varchar(10) primary key, "+ loginTablePASSWORD +" varchar(10))");
 
@@ -85,7 +87,9 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         db.execSQL("drop table if exists "+ bookTable);
         db.execSQL("drop table if exists "+ adminTable);
         db.execSQL("drop table if exists "+ loginTable);
-
         onCreate(db);
     }
+
+
+
 }
