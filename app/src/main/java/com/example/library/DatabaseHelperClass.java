@@ -15,7 +15,8 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     private String studentTable = "studentTable";
     private String bookTable = "bookTable";
     private String facultyTable = "facultyTable";
-    private String historyTable = "historyTable";
+    private String studentHistoryTable = "studentHistoryTable";
+    private String facultyHistoryTable = "facultyHistoryTable";
     private String loginTable = "loginTable";
     private String adminTable = "adminTable";
 
@@ -41,11 +42,17 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     private String bookTablePRICE = "price";
     private String bookTableISSUED = "issued";
 
-    private String historyTableISSUERID = "issuer_id";
-    private String historyTableBID = "bid";
-    private String historyTableISSUEDATE = "issue_date";
-    private String historyTableRETURNDATE = "return_date";
-    private String historyTableFINEAMT = "fine_amt";
+    private String studentHistoryTableISSUERID = "issuer_id";
+    private String studentHistoryTableBID = "bid";
+    private String studentHistoryTableISSUEDATE = "issue_date";
+    private String studentHistoryTableRETURNDATE = "return_date";
+    private String studentHistoryTableFINEAMT = "fine_amt";
+
+    private String facultyHistoryTableISSUERID = "issuer_id";
+    private String facultyHistoryTableBID = "bid";
+    private String facultyHistoryTableISSUEDATE = "issue_date";
+    private String facultyHistoryTableRETURNDATE = "return_date";
+    private String facultyHistoryTableFINEAMT = "fine_amt";
 
     private String adminTableID = "aID";
     private String adminTableNAME = "name";
@@ -65,21 +72,26 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("create table "+studentTable+"("+studentTableSID+" varchar(10) primary key, "+studentTableNAME +" varchar(10), "
-                + studentTableEMAILID+" varchar(20), "+ studentTablePHONE+" varchar(10), "+studentTableDEPARTMENT+"  varchar(10))");
+        db.execSQL("create table if not exists "+studentTable+"("+studentTableSID+" varchar(10) primary key, "+studentTableNAME +" varchar(30), "
+                + studentTableEMAILID+" varchar(20), "+ studentTablePHONE+" char(10), "+studentTableDEPARTMENT+"  varchar(15))");
 
-        db.execSQL("create table "+facultyTable+"("+facultyTableFID+" varchar(10) primary key, "+facultyTableNAME +" varchar(10), "
-                + facultyTableEMAILID+" varchar(20), "+ facultyTablePHONE+" varchar(10), "+facultyTableDEPARTMENT+"  varchar(10))");
+        db.execSQL("create table if not exists "+facultyTable+"("+facultyTableFID+" varchar(4) primary key, "+facultyTableNAME +" varchar(30), "
+                + facultyTableEMAILID+" varchar(20), "+ facultyTablePHONE+" char(10), "+facultyTableDEPARTMENT+"  varchar(15))");
 
-        db.execSQL("create table "+bookTable+"("+bookTableID+" varchar(4) primary key, "+ bookTableTITLE +" varchar(10), "
-                + bookTableAUTHOR+" varchar(20), "+ bookTableEDITION+" varchar(10), "+ bookTableGENRE+"  varchar(10),"+ bookTablePRICE+" varchar(5),"
-                + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(10),"  + bookTableYEAR+"  varchar(4))");
+        db.execSQL("create table if not exists "+bookTable+"("+bookTableID+" char(4) primary key, "+ bookTableTITLE +" varchar(30), "
+                + bookTableAUTHOR+" varchar(20), "+ bookTableEDITION+ " int," + bookTableGENRE+" varchar(10),"+ bookTablePRICE+" varchar(5),"
+                + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(20),"  + bookTableYEAR+"  char(4))");
 
+        db.execSQL("create table if not exists " + studentHistoryTable+"("+studentHistoryTableBID+" char(4) primary key, "+ studentHistoryTableISSUERID +" varchar(10), "
+                + studentHistoryTableISSUEDATE+" date, "+ studentHistoryTableRETURNDATE+" date, "+ studentHistoryTableFINEAMT+" varchar(5), primary key (issuer_id,bid))");
 
-        db.execSQL("create table "+adminTable+"("+adminTableID+" varchar(10) primary key, "+adminTableNAME +" varchar(10), "
-                +adminTableNUMBER+" varchar(10))");
+        db.execSQL("create table if not exists " + facultyHistoryTable+"("+facultyHistoryTableBID+" char(4) primary key, "+ facultyHistoryTableISSUERID +" varchar(10), "
+                + facultyHistoryTableISSUEDATE+" date, "+ facultyHistoryTableRETURNDATE+" date, "+ facultyHistoryTableFINEAMT+" varchar(5), primary key (issuer_id,bid))");
 
-        db.execSQL("create table "+loginTable+"("+loginTableUID+" varchar(10) primary key, "+ loginTablePASSWORD +" varchar(10))");
+        db.execSQL("create table if not exists "+adminTable+"("+adminTableID+" varchar(20) primary key, "+adminTableNAME +" varchar(15), "
+                +adminTableNUMBER+" char(10))");
+
+        db.execSQL("create table if not exists "+loginTable+"("+loginTableUID+" varchar(20) primary key, "+ loginTablePASSWORD +" varchar(15))");
 
     }
 
