@@ -114,7 +114,7 @@ public class add_student extends AppCompatActivity {
 
                     if(isInserted)
                     {
-                        Toast.makeText(add_student.this, "Insertion Completed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(add_student.this, "Student added", Toast.LENGTH_SHORT).show();
                         Intent submitIntent = new Intent(add_student.this,MainActivity.class);
                         startActivity(submitIntent);
                     }

@@ -102,7 +102,7 @@ sign_up extends AppCompatActivity {
 
                     if(isInserted)
                     {
-                        Toast.makeText(sign_up.this, "Insertion Completed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(sign_up.this, "Sign-Up completed", Toast.LENGTH_SHORT).show();
                         Intent intentToLogin = new Intent(sign_up.this, Login.class);
                         startActivity(intentToLogin);
                     }

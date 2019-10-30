@@ -124,12 +124,12 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
         if(result==-1 || result1 == -1) {
 
-            Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
             return false;
         }
         else
         {
-            Toast.makeText(mcontext, "Insertion Successful", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mcontext, "Insertion Successful", Toast.LENGTH_SHORT).show();
             return true;
 
         }
@@ -150,15 +150,40 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
         if(result==-1 ) {
 
-            Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mcontext, "Student exists", Toast.LENGTH_SHORT).show();
             return false;
         }
         else
         {
-            Toast.makeText(mcontext, "Insertion Successful", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mcontext, "Student added", Toast.LENGTH_SHORT).show();
             return true;
 
         }
     }
 
+    public boolean insertIntoFaculty(String fname,String emailid,String phone,String department,String ID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues valuesintofacultyTable = new ContentValues();
+        valuesintofacultyTable.put(facultyTableFID,ID);
+        valuesintofacultyTable.put(facultyTableNAME,fname);
+        valuesintofacultyTable.put(facultyTablePHONE,phone);
+        valuesintofacultyTable.put(facultyTableDEPARTMENT,department);
+        valuesintofacultyTable.put(facultyTableEMAILID,emailid);
+
+        long result = db.insert(facultyTable,null,valuesintofacultyTable);
+
+        if(result==-1 ) {
+
+            //Toast.makeText(mcontext, "Faculty exists", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else
+        {
+            //Toast.makeText(mcontext, "Faculty added", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
 }
