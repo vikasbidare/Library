@@ -1,8 +1,10 @@
 package com.example.library;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -52,10 +54,12 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     private String loginTableUID = "uID";
     private String loginTablePASSWORD = "password";
 
+    private Context mcontext;
+
 
     public DatabaseHelperClass(@Nullable Context context) {
         super(context, databaseName, null, 1);
-        SQLiteDatabase db = this.getWritableDatabase();
+        mcontext = context;
     }
 
     @Override
@@ -90,6 +94,33 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public boolean insertIntoSignUp(String name,String emailid,String number,String password)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
 
+        ContentValues valuesIntoAdminTable = new ContentValues();
+        valuesIntoAdminTable.put(adminTableID,emailid);
+        valuesIntoAdminTable.put(adminTableNAME,name);
+        valuesIntoAdminTable.put(adminTableNUMBER,number);
+
+        ContentValues valuesIntoLoginTable = new ContentValues();
+        valuesIntoLoginTable.put(loginTableUID,emailid);
+        valuesIntoLoginTable.put(loginTablePASSWORD,password);
+
+        long result = db.insert(adminTable,null,valuesIntoAdminTable);
+        long result1 = db.insert(loginTable,null,valuesIntoLoginTable);
+
+        if(result==-1 || result1 == -1) {
+
+            Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else
+        {
+            Toast.makeText(mcontext, "Insertion Successful", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
 
 }
