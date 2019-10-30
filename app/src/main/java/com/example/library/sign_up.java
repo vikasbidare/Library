@@ -3,17 +3,22 @@ package com.example.library;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class
 sign_up extends AppCompatActivity {
 
-    Boolean isEmpty = true;
+    Boolean isEmpty = false;
     String mname,memailId,mpassword,mconfirmPassword,mnumber;
+
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String MobilePattern = "[0-9]{10}";
 
 
 
@@ -38,7 +43,7 @@ sign_up extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                isEmpty = false;
                 mname = name.getText().toString();
                 memailId = emailID.getText().toString();
                 mnumber = number.getText().toString();
@@ -56,10 +61,20 @@ sign_up extends AppCompatActivity {
                     number.setError("Enter Number");
                     isEmpty = true;
                 }
+                if(!mnumber.matches(MobilePattern))
+                {
+                    number.setError("Enter Valid Number");
+                    isEmpty = true;
+                }
 
                 if(memailId.isEmpty())
                 {
                     emailID.setError("Enter Email");
+                    isEmpty = true;
+                }
+
+                if (!memailId.matches(emailPattern)){
+                    emailID.setError("Enter valid email address");
                     isEmpty = true;
                 }
 
@@ -74,9 +89,26 @@ sign_up extends AppCompatActivity {
                     confirmPassword.setError("Confirm Password");
                     isEmpty = true;
                 }
-//                Intent intentToLogin = new Intent(sign_up.this,Login.class);
-//                startActivity(intentToLogin);
 
+                if(!mconfirmPassword.equals(mpassword))
+                {
+                    Toast.makeText(sign_up.this, "Check your password again", Toast.LENGTH_SHORT).show();
+                    isEmpty = true;
+                }
+
+                if(!isEmpty) {
+                    DatabaseHelperClass db = new DatabaseHelperClass(sign_up.this);
+                    boolean isInserted = db.insertIntoSignUp(mname,memailId,mnumber,mpassword);
+
+                    if(isInserted)
+                        Toast.makeText(sign_up.this, "Insertion Completed", Toast.LENGTH_SHORT).show();
+                    else
+                    {
+                        Toast.makeText(sign_up.this, "User already exists", Toast.LENGTH_SHORT).show();
+                    }
+                    Intent intentToLogin = new Intent(sign_up.this, Login.class);
+                    startActivity(intentToLogin);
+                }
             }
         });
 
