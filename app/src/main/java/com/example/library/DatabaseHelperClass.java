@@ -79,7 +79,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
                 + facultyTableEMAILID+" varchar(20), "+ facultyTablePHONE+" char(10), "+facultyTableDEPARTMENT+"  varchar(15))");
 
         db.execSQL("create table if not exists "+bookTable+"("+bookTableID+" char(4) primary key, "+ bookTableTITLE +" varchar(30), "
-                + bookTableAUTHOR+" varchar(20), "+ bookTableEDITION+ " int," + bookTableGENRE+" varchar(10),"+ bookTablePRICE+" varchar(5),"
+                + bookTableAUTHOR+" varchar(20), "+ bookTableEDITION+ " varchar(2)," + bookTableGENRE+" varchar(10),"+ bookTablePRICE+" varchar(5),"
                 + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(20),"  + bookTableYEAR+"  char(4))");
 
         db.execSQL("create table if not exists " + studentHistoryTable+"("+studentHistoryTableBID+" char(4) primary key, "+ studentHistoryTableISSUERID +" varchar(10), "
@@ -181,6 +181,35 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         }
         else
         {
+            //Toast.makeText(mcontext, "Faculty added", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
+
+    public boolean insertIntoBook(String title,String author,String ID,String price,String edition,String genre,String publisher,String year){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues valuesintobookTable = new ContentValues();
+        valuesintobookTable.put(bookTableID,ID);
+        valuesintobookTable.put(bookTableTITLE,title);
+        valuesintobookTable.put(bookTableAUTHOR,author);
+        valuesintobookTable.put(bookTableEDITION,edition);
+        valuesintobookTable.put(bookTableGENRE,genre);
+        valuesintobookTable.put(bookTablePRICE,price);
+        valuesintobookTable.put(bookTableISSUED,"No");
+        valuesintobookTable.put(bookTablePUBLICATION,publisher);
+        valuesintobookTable.put(bookTableYEAR,year);
+
+        long result = db.insert(bookTable,null,valuesintobookTable);
+
+
+        if(result==-1 ) {
+
+            //Toast.makeText(mcontext, "Faculty exists", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
             //Toast.makeText(mcontext, "Faculty added", Toast.LENGTH_SHORT).show();
             return true;
 
