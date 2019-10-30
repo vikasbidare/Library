@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Library</string>
+    <string name="app_name">BookEazy</string>
     <string name="title_activity_login">Library</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

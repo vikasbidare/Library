@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class add_student extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class add_student extends AppCompatActivity {
     String department;
     String phone;
     String email;
+    String id;
     boolean iserror = false;
 
     @Override
@@ -34,13 +36,12 @@ public class add_student extends AppCompatActivity {
         final EditText Department = findViewById(R.id.Addstudentdepartment);
         final EditText Phone = findViewById(R.id.Addstudentphone);
         final EditText Email = findViewById(R.id.Addstudentemail);
+        final EditText ID = findViewById(R.id.Addidnumber);
 
-        fname = Fname.getText().toString();
-        mname = Mname.getText().toString();
-        lname = Lname.getText().toString();
-        department = Department.getText().toString();
-        phone = Phone.getText().toString();
-        email = Email.getText().toString();
+
+
+        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        final String MobilePattern = "[0-9]{10}";
 
         cancelbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,10 +54,75 @@ public class add_student extends AppCompatActivity {
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fname = Fname.getText().toString().trim();
+                mname = Mname.getText().toString().trim();
+                lname = Lname.getText().toString().trim();
+                department = Department.getText().toString().trim();
+                phone = Phone.getText().toString().trim();
+                email = Email.getText().toString().trim();
+                id = ID.getText().toString().trim();
                 iserror = false;
                 if(TextUtils.isEmpty(email)){
                     iserror = true;
                     Email.setError("Enter e-mail ID");
+                }
+                if(!email.matches(emailPattern)){
+                    iserror = true;
+                    Email.setError("Enter correct e-mail ID");
+                }
+                if(fname.isEmpty())
+                {
+                    Fname.setError("Enter First name");
+                    iserror = true;
+                }
+                if(lname.isEmpty())
+                {
+                    Lname.setError("Enter Last name");
+                    iserror = true;
+                }
+                if(phone.isEmpty())
+                {
+                    Phone.setError("Enter Phone Number");
+                    iserror = true;
+                }
+                if(!phone.matches(MobilePattern))
+                {
+                    Phone.setError("Enter Valid Phone Number");
+                    iserror = true;
+                }
+                if(department.isEmpty())
+                {
+                    Department.setError("Enter department");
+                    iserror = true;
+                }
+                if(id.isEmpty())
+                {
+                    ID.setError("Enter ID");
+                    iserror = true;
+                }
+                if(!iserror)
+                {
+                    DatabaseHelperClass db = new DatabaseHelperClass(add_student.this);
+                    boolean isInserted;
+                    if(mname.isEmpty()) {
+                        isInserted = db.insertIntoStudent(fname + " " + lname, email, phone, department, id);
+                    }
+                    else
+                    {
+                        isInserted = db.insertIntoStudent(fname + " " + mname + " " + lname, email, phone, department, id);
+                    }
+
+                    if(isInserted)
+                    {
+                        Toast.makeText(add_student.this, "Insertion Completed", Toast.LENGTH_SHORT).show();
+                        Intent submitIntent = new Intent(add_student.this,MainActivity.class);
+                        startActivity(submitIntent);
+                    }
+                    else
+                    {
+                        Toast.makeText(add_student.this, "Student already exists", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
 

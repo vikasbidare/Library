@@ -83,10 +83,10 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
                 + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(20),"  + bookTableYEAR+"  char(4))");
 
         db.execSQL("create table if not exists " + studentHistoryTable+"("+studentHistoryTableBID+" char(4) primary key, "+ studentHistoryTableISSUERID +" varchar(10), "
-                + studentHistoryTableISSUEDATE+" date, "+ studentHistoryTableRETURNDATE+" date, "+ studentHistoryTableFINEAMT+" varchar(5), primary key (issuer_id,bid))");
+                + studentHistoryTableISSUEDATE+" date, "+ studentHistoryTableRETURNDATE+" date, "+ studentHistoryTableFINEAMT+" varchar(5))");
 
         db.execSQL("create table if not exists " + facultyHistoryTable+"("+facultyHistoryTableBID+" char(4) primary key, "+ facultyHistoryTableISSUERID +" varchar(10), "
-                + facultyHistoryTableISSUEDATE+" date, "+ facultyHistoryTableRETURNDATE+" date, "+ facultyHistoryTableFINEAMT+" varchar(5), primary key (issuer_id,bid))");
+                + facultyHistoryTableISSUEDATE+" date, "+ facultyHistoryTableRETURNDATE+" date, "+ facultyHistoryTableFINEAMT+" varchar(5))");
 
         db.execSQL("create table if not exists "+adminTable+"("+adminTableID+" varchar(20) primary key, "+adminTableNAME +" varchar(15), "
                 +adminTableNUMBER+" char(10))");
@@ -123,6 +123,32 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         long result1 = db.insert(loginTable,null,valuesIntoLoginTable);
 
         if(result==-1 || result1 == -1) {
+
+            Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else
+        {
+            Toast.makeText(mcontext, "Insertion Successful", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
+
+    public boolean insertIntoStudent(String sname,String emailid,String phone,String department,String ID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues valuesintostudentTable = new ContentValues();
+        valuesintostudentTable.put(studentTableSID,ID);
+        valuesintostudentTable.put(studentTableNAME,sname);
+        valuesintostudentTable.put(studentTablePHONE,phone);
+        valuesintostudentTable.put(studentTableDEPARTMENT,department);
+        valuesintostudentTable.put(studentTableEMAILID,emailid);
+
+        long result = db.insert(studentTable,null,valuesintostudentTable);
+
+        if(result==-1 ) {
 
             Toast.makeText(mcontext, "Insertion Failed", Toast.LENGTH_SHORT).show();
             return false;

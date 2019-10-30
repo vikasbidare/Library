@@ -44,11 +44,11 @@ sign_up extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 isEmpty = false;
-                mname = name.getText().toString();
-                memailId = emailID.getText().toString();
-                mnumber = number.getText().toString();
-                mpassword = password.getText().toString();
-                mconfirmPassword = confirmPassword.getText().toString();
+                mname = name.getText().toString().trim();
+                memailId = emailID.getText().toString().trim();
+                mnumber = number.getText().toString().trim();
+                mpassword = password.getText().toString().trim();
+                mconfirmPassword = confirmPassword.getText().toString().trim();
 
                 if(mname.isEmpty())
                 {
@@ -63,7 +63,7 @@ sign_up extends AppCompatActivity {
                 }
                 if(!mnumber.matches(MobilePattern))
                 {
-                    number.setError("Enter Valid Number");
+                    number.setError("Enter Valid Phone Number");
                     isEmpty = true;
                 }
 
@@ -80,7 +80,7 @@ sign_up extends AppCompatActivity {
 
                 if(mpassword.isEmpty())
                 {
-                    password.setError("Enter Pasword");
+                    password.setError("Enter Password");
                     isEmpty = true;
                 }
 
@@ -101,13 +101,15 @@ sign_up extends AppCompatActivity {
                     boolean isInserted = db.insertIntoSignUp(mname,memailId,mnumber,mpassword);
 
                     if(isInserted)
+                    {
                         Toast.makeText(sign_up.this, "Insertion Completed", Toast.LENGTH_SHORT).show();
+                        Intent intentToLogin = new Intent(sign_up.this, Login.class);
+                        startActivity(intentToLogin);
+                    }
                     else
                     {
                         Toast.makeText(sign_up.this, "User already exists", Toast.LENGTH_SHORT).show();
                     }
-                    Intent intentToLogin = new Intent(sign_up.this, Login.class);
-                    startActivity(intentToLogin);
                 }
             }
         });

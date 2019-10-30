@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue300"
-            android:hint="Middle Name"
+            android:hint="Middle Name(Optional)"
             android:textColor="@color/black"
             android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
