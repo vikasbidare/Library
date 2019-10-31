@@ -20,10 +20,8 @@ public class Login extends AppCompatActivity {
     String email;
     String password;
     String checkpassword;
-    String checkUID;
     int flag=0;
     Boolean hasfound = false;
-    Boolean haserror = false;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     DatabaseHelperClass myDB;
     @Override
@@ -50,8 +48,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 flag = 0;
-                hasfound = false;
-                haserror = false;
+
                 email = Username.getText().toString().trim();
                 password = Password.getText().toString().trim();
                 if (TextUtils.isEmpty(email)) {
@@ -69,44 +66,23 @@ public class Login extends AppCompatActivity {
                 if(flag == 0)
                 {
                     Cursor tempDB = myDB.getFromLogin(email);
-                    if(tempDB.getCount() == 0)
+                    if (tempDB.getCount() == 0)
                     {
-                        Toast.makeText(Login.this, "UserID doesnt exist", Toast.LENGTH_SHORT).show();
-                        return ;
+                        Toast.makeText(Login.this, "User Doesnt exists", Toast.LENGTH_SHORT).show();
+                        return;
                     }
-                    while (tempDB.moveToNext())
-                    {
-                        checkpassword = tempDB.getString(1);
-                        checkUID = tempDB.getString(0);
-
-                        if(checkUID.equals(email) && checkpassword.equals(password)) {
-                            hasfound = true;
-                            break;
-                        }
-                        if(checkUID.equals(email)&&!checkpassword.equals(password))
-                        {
-                            hasfound = true;
-                            haserror = true;
-                            break;
-                        }
-                    }
-                    if(hasfound)
-                    {
-                        if (!haserror) {
-                            Toast.makeText(Login.this, "Successful SingIN", Toast.LENGTH_SHORT).show();
-                            Intent intentToMainActivity = new Intent(Login.this, MainActivity.class);
-                            startActivity(intentToMainActivity);
-                        }
-                        else
-                        {
-                            Toast.makeText(Login.this, "Wrong Password", Toast.LENGTH_SHORT).show();
-                        }
+                    if (!tempDB.moveToFirst())
+                    tempDB.moveToFirst();
+                    checkpassword = tempDB.getString(1);
+                    if(checkpassword.equals(password)) {
+                        Toast.makeText(Login.this, "SignIN Successful", Toast.LENGTH_SHORT).show();
+                        Intent intentToMainActivity = new Intent(Login.this, MainActivity.class);
+                        startActivity(intentToMainActivity);
                     }
                     else
                     {
-                        Toast.makeText(Login.this, "UserID doesnt exist", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Wrong Password", Toast.LENGTH_SHORT).show();
                     }
-
                 }
             }
         });

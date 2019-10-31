@@ -220,7 +220,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     public Cursor getFromLogin(String userID)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+loginTable,null);
+        Cursor res = db.rawQuery("select * from "+loginTable +" where "+loginTableUID +" = "+ " '"+userID+"'",null);
         return res;
     }
 }
