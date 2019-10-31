@@ -72,7 +72,13 @@ public class Login extends AppCompatActivity {
                     checkpassword = tempDB.getString(1);
                     if(checkpassword.equals(password)) {
                         Toast.makeText(Login.this, "Sign-in Successful", Toast.LENGTH_SHORT).show();
+                        Cursor Tempdb = myDB.getFromAdmin(email);
                         Intent intentToMainActivity = new Intent(Login.this, MainActivity.class);
+                        intentToMainActivity.putExtra("UserEmail",email);
+                        if (!Tempdb.moveToFirst())
+                            Tempdb.moveToFirst();
+                        intentToMainActivity.putExtra("PhoneNumber",Tempdb.getString(2));
+                        intentToMainActivity.putExtra("Name",Tempdb.getString(1));
                         startActivity(intentToMainActivity);
                     }
                     else

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean doubleBackToExitPressedOnce;
     private Handler mHandler = new Handler();
 
+    private String UserEmail,UserName,UserNumber;
     private final Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
@@ -56,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
 
 //        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+
+        Intent intentFrom = getIntent();
+        UserEmail = intentFrom.getStringExtra("UserEmail");
+        UserName = intentFrom.getStringExtra("Name");
+        UserNumber =intentFrom.getStringExtra("PhoneNumber");
+
+        TextView email = (TextView) findViewById(R.id.profileemail);
+        TextView name = (TextView) findViewById(R.id.profilename);
+        TextView phone = (TextView) findViewById(R.id.profilephno);
+
+
+        email.setText(UserEmail);
+        name.setText(UserName);
+        phone.setText(UserNumber);
 
         ArrayList<DataClass> items = new ArrayList<>();
 
