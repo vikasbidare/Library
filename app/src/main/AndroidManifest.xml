@@ -37,8 +37,6 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".editstudentinfo"
             android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".profile_settings"></activity>
         <activity
             android:name=".Login"
             android:label="Library"
