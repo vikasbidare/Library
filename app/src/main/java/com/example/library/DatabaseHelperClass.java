@@ -2,6 +2,7 @@ package com.example.library;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -82,10 +83,10 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
                 + bookTableAUTHOR+" varchar(20), "+ bookTableEDITION+ " varchar(2)," + bookTableGENRE+" varchar(10),"+ bookTablePRICE+" varchar(5),"
                 + bookTableISSUED+"  varchar(3)," + bookTablePUBLICATION+"  varchar(20),"  + bookTableYEAR+"  char(4))");
 
-        db.execSQL("create table if not exists " + studentHistoryTable+"("+studentHistoryTableBID+" char(4) primary key, "+ studentHistoryTableISSUERID +" varchar(10), "
+        db.execSQL("create table if not exists " + studentHistoryTable+"("+studentHistoryTableBID+" char(4) ,"+ studentHistoryTableISSUERID +" varchar(10), "
                 + studentHistoryTableISSUEDATE+" date, "+ studentHistoryTableRETURNDATE+" date, "+ studentHistoryTableFINEAMT+" varchar(5))");
 
-        db.execSQL("create table if not exists " + facultyHistoryTable+"("+facultyHistoryTableBID+" char(4) primary key, "+ facultyHistoryTableISSUERID +" varchar(10), "
+        db.execSQL("create table if not exists " + facultyHistoryTable+"("+facultyHistoryTableBID+" char(4) , "+ facultyHistoryTableISSUERID +" varchar(10), "
                 + facultyHistoryTableISSUEDATE+" date, "+ facultyHistoryTableRETURNDATE+" date, "+ facultyHistoryTableFINEAMT+" varchar(5))");
 
         db.execSQL("create table if not exists "+adminTable+"("+adminTableID+" varchar(20) primary key, "+adminTableNAME +" varchar(15), "
@@ -214,5 +215,12 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             return true;
 
         }
+    }
+
+    public Cursor getFromLogin(String userID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+loginTable,null);
+        return res;
     }
 }
