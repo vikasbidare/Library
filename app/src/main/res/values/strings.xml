@@ -58,4 +58,5 @@
     <string name="facultyHistory">Faculty issue history</string>
     <string name="showStudents">Show Students</string>
     <string name="showFaculty">Show Faculty</string>
+    <string name="editaccountinfoTitle">Edit Account Info</string>
 </resources>
