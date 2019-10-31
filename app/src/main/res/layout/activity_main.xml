@@ -87,6 +87,13 @@
                     android:src="@drawable/lib2"
                     android:layout_centerHorizontal="true"
                     android:elevation="1dp"/>
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/profileDPSettings"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:src="@drawable/p"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:elevation="1dp"/>-->
             </RelativeLayout>
 
         </RelativeLayout>
