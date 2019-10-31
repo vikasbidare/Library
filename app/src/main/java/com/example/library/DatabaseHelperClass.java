@@ -204,7 +204,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         valuesintobookTable.put(bookTableEDITION,edition);
         valuesintobookTable.put(bookTableGENRE,genre);
         valuesintobookTable.put(bookTablePRICE,price);
-        valuesintobookTable.put(bookTableISSUED,"No");
+        valuesintobookTable.put(bookTableISSUED,"NO");
         valuesintobookTable.put(bookTablePUBLICATION,publisher);
         valuesintobookTable.put(bookTableYEAR,year);
 
@@ -223,6 +223,33 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         }
     }
 
+    public boolean insertIntoStudentHistory(String bookid,String studentid,String issuedate,String returndate,String fine){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues valuesIntoStudentHistory = new ContentValues();
+        valuesIntoStudentHistory.put(studentHistoryTableBID,bookid);
+        valuesIntoStudentHistory.put(studentHistoryTableISSUERID,studentid);
+        valuesIntoStudentHistory.put(studentHistoryTableISSUEDATE,issuedate);
+        valuesIntoStudentHistory.put(studentHistoryTableRETURNDATE,returndate);
+        valuesIntoStudentHistory.put(studentHistoryTableFINEAMT,fine);
+
+        long result = db.insert(studentHistoryTable,null,valuesIntoStudentHistory);
+
+
+        if(result==-1 ) {
+
+            //Toast.makeText(mcontext, "Faculty exists", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            //Toast.makeText(mcontext, "Faculty added", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
+
+
+
     public Cursor getFromLogin(String userID)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
@@ -234,6 +261,13 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+bookTable,null);
+        return res;
+    }
+
+    public Cursor getAboutABook(String bookID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+bookTable +" where "+bookTableID +" = "+ " '"+bookID+"'",null);
         return res;
     }
 
@@ -267,6 +301,29 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         loginTableUpdate.put(loginTablePASSWORD,newpassword);
 
         int res = db.update(loginTable,loginTableUpdate,loginTableUID+" = ?", new String[] { userID });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean updateIssuedOfBook(String title,String author,String ID,String price,String edition,String genre,String publisher,String year,String issued)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues bookTableUpdate = new ContentValues();
+        bookTableUpdate.put(bookTableID,ID);
+        bookTableUpdate.put(bookTableTITLE,title);
+        bookTableUpdate.put(bookTableAUTHOR,author);
+        bookTableUpdate.put(bookTableEDITION,edition);
+        bookTableUpdate.put(bookTableGENRE,genre);
+        bookTableUpdate.put(bookTablePRICE,price);
+        bookTableUpdate.put(bookTableISSUED,issued);
+        bookTableUpdate.put(bookTablePUBLICATION,publisher);
+        bookTableUpdate.put(bookTableYEAR,year);
+
+        int res = db.update(bookTable,bookTableUpdate,bookTableID+" = ?", new String[] { ID });
 
         if(res==0)
             return false;
