@@ -259,8 +259,11 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         loginTableUpdate.put(loginTableUID,userID);
         loginTableUpdate.put(loginTablePASSWORD,newpassword);
 
-        db.update(loginTable,loginTableUpdate,loginTableUID+" = ?", new String[] { userID });
+        int res = db.update(loginTable,loginTableUpdate,loginTableUID+" = ?", new String[] { userID });
 
-        return true;
+        if(res==0)
+            return false;
+        else
+            return true;
     }
 }

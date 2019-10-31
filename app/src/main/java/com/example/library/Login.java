@@ -1,8 +1,6 @@
 package com.example.library;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class Login extends AppCompatActivity {
 
@@ -68,14 +64,14 @@ public class Login extends AppCompatActivity {
                     Cursor tempDB = myDB.getFromLogin(email);
                     if (tempDB.getCount() == 0)
                     {
-                        Toast.makeText(Login.this, "User Doesnt exists", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "User doesn't exist", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (!tempDB.moveToFirst())
                     tempDB.moveToFirst();
                     checkpassword = tempDB.getString(1);
                     if(checkpassword.equals(password)) {
-                        Toast.makeText(Login.this, "SignIN Successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Sign-in Successful", Toast.LENGTH_SHORT).show();
                         Intent intentToMainActivity = new Intent(Login.this, MainActivity.class);
                         startActivity(intentToMainActivity);
                     }
