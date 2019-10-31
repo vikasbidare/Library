@@ -296,6 +296,20 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getAboutAStudent(String studentID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+studentTable +" where "+studentTableSID +" = "+ " '"+studentID+"'",null);
+        return res;
+    }
+
+    public Cursor getAboutAFaculty(String facultyID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ facultyTable +" where "+ facultyTableFID +" = "+ " '"+facultyID+"'",null);
+        return res;
+    }
+
     public Cursor getFromStudents()
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();

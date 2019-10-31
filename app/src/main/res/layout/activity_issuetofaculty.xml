@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:hint="Issuedate (DDMMYYYY)"
+                    android:hint="Issuedate (DD-MM-YYYY)"
                     android:backgroundTint="@color/blue300"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>

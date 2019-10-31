@@ -74,31 +74,30 @@ public class issuetostudent extends AppCompatActivity {
                         Toast.makeText(issuetostudent.this, "Wrong Book-ID", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    else
-                    {
+                    else {
                         if (!tempdb.moveToFirst())
                             tempdb.moveToFirst();
-                        String isIssued = tempdb.getString(6);
-                        if(isIssued.equals("YES"))
-                        {
-                            Toast.makeText(issuetostudent.this, "Sorry!!\n Book Already Issued", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        else
-                        {
-                            Boolean isInserted = myDB.insertIntoStudentHistory(bid,sid,issuedate,null,"0.00");
-                            Boolean isUpdated = myDB.updateIssuedOfBook(tempdb.getString(1),tempdb.getString(2),bid,
-                                    tempdb.getString(5),tempdb.getString(3),tempdb.getString(4),
-                                    tempdb.getString(7),tempdb.getString(8),"YES");
-                            if(isInserted && isUpdated)
+                        Cursor studentDB = myDB.getAboutAStudent(sid);
+                        if (studentDB.getCount() == 0) {
+                            Toast.makeText(issuetostudent.this, "Wrong Student-ID", Toast.LENGTH_SHORT).show();
+                        } else
                             {
-                                Toast.makeText(issuetostudent.this, "Book Issued:)\nThanks", Toast.LENGTH_SHORT).show();
-                                Intent intentToMainActivity = new Intent(issuetostudent.this,MainActivity.class);
-                                startActivity(intentToMainActivity);
-                            }
-                            else
-                            {
-                                Toast.makeText(issuetostudent.this, "Error Occurred,\nTry Again", Toast.LENGTH_SHORT).show();
+                            String isIssued = tempdb.getString(6);
+                            if (isIssued.equals("YES")) {
+                                Toast.makeText(issuetostudent.this, "Sorry!!\n Book Already Issued", Toast.LENGTH_SHORT).show();
+                                return;
+                            } else {
+                                Boolean isInserted = myDB.insertIntoStudentHistory(bid, sid, issuedate, null, "0.00");
+                                Boolean isUpdated = myDB.updateIssuedOfBook(tempdb.getString(1), tempdb.getString(2), bid,
+                                        tempdb.getString(5), tempdb.getString(3), tempdb.getString(4),
+                                        tempdb.getString(7), tempdb.getString(8), "YES");
+                                if (isInserted && isUpdated) {
+                                    Toast.makeText(issuetostudent.this, "Book Issued:)\nThanks", Toast.LENGTH_SHORT).show();
+                                    Intent intentToMainActivity = new Intent(issuetostudent.this, MainActivity.class);
+                                    startActivity(intentToMainActivity);
+                                } else {
+                                    Toast.makeText(issuetostudent.this, "Error Occurred,\nTry Again", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                     }
