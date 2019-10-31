@@ -17,12 +17,6 @@ public class show_students extends AppCompatActivity {
 
     DatabaseHelperClass mydb;
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intenttoMain = new Intent(show_students.this,MainActivity.class);
-        startActivity(intenttoMain);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

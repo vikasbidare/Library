@@ -55,6 +55,8 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".sign_up"
             android:windowSoftInputMode="stateHidden"/>
+
+        <activity android:name=".profile_settings"/>
     </application>
 
 </manifest>
