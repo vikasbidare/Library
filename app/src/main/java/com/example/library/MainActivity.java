@@ -6,13 +6,48 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private boolean doubleBackToExitPressedOnce;
+    private Handler mHandler = new Handler();
+
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            doubleBackToExitPressedOnce = false;
+        }
+    };
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        if (mHandler != null) { mHandler.removeCallbacks(mRunnable); }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent s = new Intent(Intent.ACTION_MAIN);
+            s.addCategory(Intent.CATEGORY_HOME);
+            s.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(s);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        mHandler.postDelayed(mRunnable, 2000);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
