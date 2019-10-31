@@ -31,6 +31,7 @@
         <activity android:name=".issuetostudent"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".editinfo" />
+        <activity android:name=".edit_account_info" />
         <activity android:name=".MainActivity" />
         <activity android:name=".editfacultyinfo"
             android:windowSoftInputMode="stateHidden"/>
