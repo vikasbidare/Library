@@ -248,6 +248,31 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         }
     }
 
+    public boolean insertIntoFacultyHistory(String bookid,String facultyid,String issuedate,String returndate,String fine){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues valuesIntoFacultyHistory = new ContentValues();
+        valuesIntoFacultyHistory.put(facultyHistoryTableBID,bookid);
+        valuesIntoFacultyHistory.put(facultyHistoryTableISSUERID,facultyid);
+        valuesIntoFacultyHistory.put(facultyHistoryTableISSUEDATE,issuedate);
+        valuesIntoFacultyHistory.put(facultyHistoryTableRETURNDATE,returndate);
+        valuesIntoFacultyHistory.put(facultyHistoryTableFINEAMT,fine);
+
+        long result = db.insert(facultyHistoryTable,null,valuesIntoFacultyHistory);
+
+
+        if(result==-1 ) {
+
+            //Toast.makeText(mcontext, "Faculty exists", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            //Toast.makeText(mcontext, "Faculty added", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+    }
+
 
 
     public Cursor getFromLogin(String userID)

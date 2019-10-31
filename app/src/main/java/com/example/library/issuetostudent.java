@@ -50,19 +50,19 @@ public class issuetostudent extends AppCompatActivity {
 
                 if(bid.isEmpty())
                 {
-                    editbid.setError("Enter BID");
+                    editbid.setError("Enter Book-ID");
                     isEmpty = true;
                 }
 
                 if(sid.isEmpty())
                 {
-                    editsid.setError("Enter SID");
+                    editsid.setError("Enter Student-ID");
                     isEmpty = true;
                 }
 
                 if(issuedate.isEmpty())
                 {
-                    editdate.setError("Enter Date");
+                    editdate.setError("Enter IssueDate");
                     isEmpty = true;
                 }
 

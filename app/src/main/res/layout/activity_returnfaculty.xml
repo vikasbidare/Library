@@ -68,7 +68,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/facultyissueissuebookid"
+                    android:id="@+id/facultyReturnbookid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Book ID (Ex. B101)"
@@ -86,7 +86,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/faculltyissuefacultyid"
+                    android:id="@+id/facultyreturnfacultyid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -104,7 +104,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/facultyissuedate"
+                    android:id="@+id/facultyreturdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -150,7 +150,7 @@
                     <EditText
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:id="@+id/facultyFineAmt"
+                        android:id="@+id/facultyreturnFineAmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -168,20 +168,20 @@
                     android:orientation="horizontal"
                     >
                     <Button
-                        android:id="@+id/returnFacultyCancelBtn"
+                        android:id="@+id/facultyReturnClearBtn"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:text="Cancel"
+                        android:text="Clear Data"
                         android:layout_marginRight="5dp"
                         android:textColor="#ffffff"
                         android:background="@drawable/round_button"
                         android:textSize="15sp"/>
 
                     <Button
-                        android:id="@+id/returnFacultytSubmitBtn"
+                        android:id="@+id/facultyReturnSubmitBtn"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"

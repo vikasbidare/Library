@@ -22,7 +22,7 @@ public class returnfaculty extends AppCompatActivity {
         if(facultyFineLayout.getVisibility()== View.VISIBLE||facultyFineLayout.getVisibility()==View.INVISIBLE)
             facultyFineLayout.setVisibility(View.GONE);
 
-        final TextView facultyFineAmt = (TextView) findViewById(R.id.facultyFineAmt);
+        final TextView facultyFineAmt = (TextView) findViewById(R.id.facultyreturnFineAmt);
         facultyFineAmt.setEnabled(false);
         facultyFineAmt.setText("0.00");
 
@@ -37,8 +37,8 @@ public class returnfaculty extends AppCompatActivity {
             }
         });
 
-        Button returnfacultycancel = (Button) findViewById(R.id.returnFacultyCancelBtn);
-        Button returnfacultysubmit = (Button) findViewById(R.id.returnFacultytSubmitBtn);
+        Button returnfacultycancel = (Button) findViewById(R.id.facultyReturnClearBtn);
+        Button returnfacultysubmit = (Button) findViewById(R.id.facultyReturnSubmitBtn);
 
         final Intent intentToMain = new Intent(returnfaculty.this,MainActivity.class);
         returnfacultycancel.setOnClickListener(new View.OnClickListener() {
