@@ -87,15 +87,6 @@
                     android:src="@drawable/lib2"
                     android:layout_centerHorizontal="true"
                     android:elevation="1dp"/>
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profileSetting"
-                    android:layout_height="50dp"
-                    android:layout_width="50dp"
-                    android:src="@drawable/profilesettings"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignBottom="@id/profileDP"
-                    android:elevation="1dp"/>
             </RelativeLayout>
 
         </RelativeLayout>
@@ -110,29 +101,4 @@
         android:layout_centerVertical="true"
         android:layout_below="@id/mainLayout"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:background="@color/blue300"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mainActivityLogout"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:padding="25dp"
-            android:id="@+id/mainActivityLogoutText"
-            />
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/exit"
-            android:id="@+id/mainActivityLogoutIcon"
-            />
-    </LinearLayout>
 </RelativeLayout>

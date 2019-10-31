@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce;
@@ -91,6 +93,16 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(adapter);
+
+        CircleImageView profileSettings = (CircleImageView) findViewById(R.id.profileSetting);
+        profileSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToProfileSettings = new Intent(MainActivity.this,profile_settings.class);
+                startActivity(intentToProfileSettings);
+            }
+        });
+
 
         final Intent intentToLogin = new Intent(MainActivity.this,Login.class);
         TextView logoutText = (TextView) findViewById(R.id.mainActivityLogoutText);
