@@ -162,6 +162,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         }
     }
 
+
     public boolean insertIntoFaculty(String fname,String emailid,String phone,String department,String ID)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
@@ -221,6 +222,13 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+loginTable +" where "+loginTableUID +" = "+ " '"+userID+"'",null);
+        return res;
+    }
+
+    public Cursor getFromBooks()
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+bookTable,null);
         return res;
     }
 
