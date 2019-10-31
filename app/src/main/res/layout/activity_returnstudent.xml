@@ -195,7 +195,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginLeft="5dp"
                     android:text="submit" />
-            </LinearLayout></LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

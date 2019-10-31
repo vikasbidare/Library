@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -61,6 +60,9 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     private String loginTableUID = "uID";
     private String loginTablePASSWORD = "password";
+    private String loginTableSECQTN = "security_qtn";
+    private String loginTableSECANS = "security_ans";
+
 
     private Context mcontext;
 
@@ -92,7 +94,8 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         db.execSQL("create table if not exists "+adminTable+"("+adminTableID+" varchar(20) primary key, "+adminTableNAME +" varchar(15), "
                 +adminTableNUMBER+" char(10))");
 
-        db.execSQL("create table if not exists "+loginTable+"("+loginTableUID+" varchar(20) primary key, "+ loginTablePASSWORD +" varchar(15))");
+        db.execSQL("create table if not exists "+loginTable+"("+loginTableUID+" varchar(20) primary key, "+ loginTablePASSWORD +" varchar(15),"+ loginTableSECQTN +
+                " varchar(50)," + loginTableSECANS + " varchar(50))");
 
     }
 
@@ -107,7 +110,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertIntoSignUp(String name,String emailid,String number,String password)
+    public boolean insertIntoSignUp(String name,String emailid,String number,String password,String securityqtn,String securityans)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
 
@@ -119,6 +122,8 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         ContentValues valuesIntoLoginTable = new ContentValues();
         valuesIntoLoginTable.put(loginTableUID,emailid);
         valuesIntoLoginTable.put(loginTablePASSWORD,password);
+        valuesIntoLoginTable.put(loginTableSECQTN,securityqtn);
+        valuesIntoLoginTable.put(loginTableSECANS,securityans);
 
         long result = db.insert(adminTable,null,valuesIntoAdminTable);
         long result1 = db.insert(loginTable,null,valuesIntoLoginTable);
