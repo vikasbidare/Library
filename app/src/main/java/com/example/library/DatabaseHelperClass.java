@@ -223,4 +223,17 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+loginTable +" where "+loginTableUID +" = "+ " '"+userID+"'",null);
         return res;
     }
+
+    public boolean updatePassword(String userID, String newpassword)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues loginTableUpdate = new ContentValues();
+        loginTableUpdate.put(loginTableUID,userID);
+        loginTableUpdate.put(loginTablePASSWORD,newpassword);
+
+        db.update(loginTable,loginTableUpdate,loginTableUID+" = ?", new String[] { userID });
+
+        return true;
+    }
 }
