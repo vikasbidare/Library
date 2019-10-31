@@ -3,6 +3,7 @@ package com.example.library;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class show_students extends AppCompatActivity {
+
+    DatabaseHelperClass mydb;
 
     @Override
     public void onBackPressed() {
@@ -26,14 +29,18 @@ public class show_students extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_students);
 
+        mydb = new DatabaseHelperClass(show_students.this);
         ArrayList<Designation> publics = new ArrayList<>();
-        publics.add(new Designation("Student Ravi","email@com","1234567890","CSE","s101"));
-        publics.add(new Designation("Student surya","email@com","12345123890","SSE","s102"));
-        publics.add(new Designation("Ravidsd","email@cwdom","1245567890","CE","s102"));
-        publics.add(new Designation("vzdfzRavi","email@com","6575677890","Cdd","s103"));
-        publics.add(new Designation("dFFavi","email@com","46323467890","CSE","s104"));
-        publics.add(new Designation("SFEvi","email@com","97887567890","Civil","s105"));
-        publics.add(new Designation("SFEeFi","email@com","66434567890","Mech","s106"));
+
+        Cursor tempDB = mydb.getFromStudents();
+
+        while (tempDB.moveToNext())
+        {
+            publics.add(new Designation(tempDB.getString(1),tempDB.getString(2),tempDB.getString(3),tempDB.getString(4)
+                    ,tempDB.getString(0)));
+        }
+
+
         ListView studentView = (ListView) findViewById(R.id.showStudentsListView);
         PersonAdapter madapter = new PersonAdapter(show_students.this,0,publics);
         studentView.setAdapter(madapter);
