@@ -26,7 +26,12 @@ public class History {
     }
 
     public String getMreturnDate() {
-        return mreturnDate;
+        if (mreturnDate == null || mreturnDate.length() == 0)
+            return "-------";
+        else
+            return mreturnDate;
+
+
     }
 
     public String getmIssueDate() {

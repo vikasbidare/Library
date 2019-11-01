@@ -317,6 +317,13 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getAllFromStudentHistory()
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+studentHistoryTable,null);
+        return res;
+    }
+
     public Cursor getFromAdmin(String userId)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
