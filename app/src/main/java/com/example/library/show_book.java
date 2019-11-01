@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class show_book extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class show_book extends AppCompatActivity {
         {
             books.add(new Book(tempDB.getString(1),tempDB.getString(0),tempDB.getString(2),tempDB.getString(6)));
         }
+        Collections.reverse(books);
 
         ListView bookview = (ListView) findViewById(R.id.showBookListView);
         BookAdapter madapter = new BookAdapter(show_book.this,0,books);

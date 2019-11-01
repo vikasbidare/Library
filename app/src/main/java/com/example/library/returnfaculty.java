@@ -42,7 +42,6 @@ public class returnfaculty extends AppCompatActivity {
             facultyFineLayout.setVisibility(View.GONE);
 
         FineAmt.setEnabled(false);
-        FineAmt.setText("0.00");
 
         Process.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +109,9 @@ public class returnfaculty extends AppCompatActivity {
                                 }
 
                                 Process.setClickable(false);
-                                FineAmt.setText("10.00");
+                                calculateFine fine = new calculateFine();
+                                fineamt = fine.fineForFaculty(historyDB.getString(2) , returndate) + " ";
+                                FineAmt.setText(fineamt);
 
                                 Cancel.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -135,7 +136,7 @@ public class returnfaculty extends AppCompatActivity {
                                     public void onClick(View v) {
 
                                         Boolean isInserted = myDB.updateFacultyHistoryTable(bookid, facultyid, historyDB.getString(2),
-                                                returndate, "10.00");
+                                                returndate, fineamt);
                                         Boolean isUpdated = myDB.updateIssuedOfBook(tempdb.getString(1), tempdb.getString(2), bookid,
                                                 tempdb.getString(5), tempdb.getString(3), tempdb.getString(4),
                                                 tempdb.getString(7), tempdb.getString(8), "NO");
