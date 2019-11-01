@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".book_single_info"
+            android:noHistory="true"
             android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name=".show_faculty" />
         <activity android:name=".show_students" />

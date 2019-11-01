@@ -15,41 +15,43 @@ public class book_single_info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_single_info);
 
-        final TextView bookID = (TextView) findViewById(R.id.bookinfoid);
+        Intent parentIntent = getIntent();
+
+        TextView bookID = (TextView) findViewById(R.id.bookinfoid);
         bookID.setEnabled(false);
-        bookID.setText("B101");
+        bookID.setText(parentIntent.getStringExtra("BookId"));
 
-        final TextView bookTitle = (TextView) findViewById(R.id.bookinfotitle);
+         TextView bookTitle = (TextView) findViewById(R.id.bookinfotitle);
         bookTitle.setEnabled(false);
-        bookTitle.setText("Not a penny more,Not a penny less");
+        bookTitle.setText(parentIntent.getStringExtra("Title"));
 
-        final TextView bookedition = (TextView) findViewById(R.id.bookinfoedition);
+         TextView bookedition = (TextView) findViewById(R.id.bookinfoedition);
         bookedition.setEnabled(false);
-        bookedition.setText("1");
+        bookedition.setText(parentIntent.getStringExtra("Edition"));
 
-        final TextView bookAuthor = (TextView) findViewById(R.id.bookinfoauthor);
+         TextView bookAuthor = (TextView) findViewById(R.id.bookinfoauthor);
         bookAuthor.setEnabled(false);
-        bookAuthor.setText("Jeffrey Archer");
+        bookAuthor.setText(parentIntent.getStringExtra("Author"));
 
-        final TextView bookgenre = (TextView) findViewById(R.id.bookinfogenre);
+         TextView bookgenre = (TextView) findViewById(R.id.bookinfogenre);
         bookgenre.setEnabled(false);
-        bookgenre.setText("Fiction");
+        bookgenre.setText(parentIntent.getStringExtra("Genre"));
 
-        final TextView bookpublisher = (TextView) findViewById(R.id.bookinfopublisher);
+         TextView bookpublisher = (TextView) findViewById(R.id.bookinfopublisher);
         bookpublisher.setEnabled(false);
-        bookpublisher.setText("Penguin");
+        bookpublisher.setText(parentIntent.getStringExtra("Publisher"));
 
-        final TextView bookprice = (TextView) findViewById(R.id.bookinfoprice);
+         TextView bookprice = (TextView) findViewById(R.id.bookinfoprice);
         bookprice.setEnabled(false);
-        bookprice.setText("350");
+        bookprice.setText(parentIntent.getStringExtra("Price"));
 
-        final TextView bookyear = (TextView) findViewById(R.id.bookinfoyear);
+         TextView bookyear = (TextView) findViewById(R.id.bookinfoyear);
         bookyear.setEnabled(false);
-        bookyear.setText("2012");
+        bookyear.setText(parentIntent.getStringExtra("Year of Publication"));
 
-        final TextView bookissued = (TextView) findViewById(R.id.bookinfoissued);
+         TextView bookissued = (TextView) findViewById(R.id.bookinfoissued);
         bookissued.setEnabled(false);
-        bookissued.setText("Yes");
+        bookissued.setText(parentIntent.getStringExtra("Issued"));
 
         Button Backbtn = (Button) findViewById(R.id.bookinfobackbtn);
         Backbtn.setOnClickListener(new View.OnClickListener() {

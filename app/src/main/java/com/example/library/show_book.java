@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Collections;
 public class show_book extends AppCompatActivity {
 
     DatabaseHelperClass mydb;
-
+    ArrayList<Book> books = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +25,7 @@ public class show_book extends AppCompatActivity {
 
 
         mydb = new DatabaseHelperClass(show_book.this);
-        ArrayList<Book> books = new ArrayList<>();
-        Cursor tempDB = mydb.getFromBooks();
+        final Cursor tempDB = mydb.getFromBooks();
 
         while (tempDB.moveToNext())
         {
@@ -41,11 +41,37 @@ public class show_book extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(show_book.this, "Selected"+position, Toast.LENGTH_SHORT).show();
+
+                Book book = books.get(position);
+                String bookid = book.getMbookId();
+                Cursor tempdb = mydb.getAboutABook(bookid);
+
+                if(!tempdb.moveToFirst())
+                    tempdb.moveToFirst();
+
                 Intent intentToshowbookinfo = new Intent(show_book.this,book_single_info.class);
+                intentToshowbookinfo.putExtra("BookId",tempdb.getString(0));
+                intentToshowbookinfo.putExtra("Title",tempdb.getString(1));
+                intentToshowbookinfo.putExtra("Edition",tempdb.getString(3));
+                intentToshowbookinfo.putExtra("Author",tempdb.getString(2));
+                intentToshowbookinfo.putExtra("Genre",tempdb.getString(4));
+                intentToshowbookinfo.putExtra("Publisher",tempdb.getString(8));
+                intentToshowbookinfo.putExtra("Year of Publication",tempdb.getString(7));
+                intentToshowbookinfo.putExtra("Price",tempdb.getString(5));
+                intentToshowbookinfo.putExtra("Issued",tempdb.getString(6));
+
+
                 startActivity(intentToshowbookinfo);
             }
         });
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        books.clear();
+
+    }
+
 }
