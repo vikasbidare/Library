@@ -340,6 +340,15 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getFromStudentHistory(String studentID, String bookID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+studentHistoryTable + " where "+studentHistoryTableBID +"= ? and " +
+                        studentHistoryTableISSUERID + "= ? and " + studentHistoryTableRETURNDATE +" is null"
+                ,new String[]{bookID,studentID});
+        return res;
+    }
+
     public boolean updatePassword(String userID, String newpassword)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
@@ -369,6 +378,26 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
         int res = db.update(facultyHistoryTable,facultyHistoryTableUpdate,facultyHistoryTableBID+" = ? and "+
                 facultyHistoryTableISSUERID+ " = ? and "+facultyHistoryTableRETURNDATE+ " is null", new String[] { bookid,facultyid });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean updateStudentHistoryTable(String bookid, String studentid,String IssueDate, String ReturnDate,String Fineamt)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues studentHistoryTableUpdate = new ContentValues();
+        studentHistoryTableUpdate.put(studentHistoryTableBID,bookid);
+        studentHistoryTableUpdate.put(studentHistoryTableISSUERID,studentid);
+        studentHistoryTableUpdate.put(studentHistoryTableISSUEDATE,IssueDate);
+        studentHistoryTableUpdate.put(studentHistoryTableRETURNDATE,ReturnDate);
+        studentHistoryTableUpdate.put(studentHistoryTableFINEAMT,Fineamt);
+
+        int res = db.update(studentHistoryTable,studentHistoryTableUpdate,studentHistoryTableBID+" = ? and "+
+                studentHistoryTableISSUERID+ " = ? and "+studentHistoryTableRETURNDATE+ " is null", new String[] { bookid,studentid });
 
         if(res==0)
             return false;

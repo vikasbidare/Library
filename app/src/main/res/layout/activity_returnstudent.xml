@@ -68,7 +68,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuebookid"
+                    android:id="@+id/studentreturnbookid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Book ID (Ex. B101)"
@@ -86,7 +86,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuestudentid"
+                    android:id="@+id/studentreturnstudentid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -104,7 +104,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentissuedate"
+                    android:id="@+id/studentreturndate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -122,7 +122,7 @@
                 android:layout_marginBottom="20dp"
                 >
                 <Button
-                    android:id="@+id/studentprocessbtn"
+                    android:id="@+id/studentreturnprocessbtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/studentFineAmt"
+                    android:id="@+id/studentreturnFineAmt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
