@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,20 @@ public class profile_settings extends AppCompatActivity {
 
         ArrayList<DataClass> items = new ArrayList<>();
 
+
+        SharedPreferences prefs = getSharedPreferences("MyFiles", MODE_PRIVATE);
+        String UserEmail = prefs.getString("UserEmail", "mailme.vikasb@gmail.com");//"No name defined" is the default value.
+        String UserNumber = prefs.getString("PhoneNumber", "9731807100"); //0 is the default value.
+        String UserName = prefs.getString("Name", "Vikas BN");
+
+        TextView email = (TextView) findViewById(R.id.profileSemail);
+        TextView name = (TextView) findViewById(R.id.profileSname);
+        TextView phone = (TextView) findViewById(R.id.profileSphno);
+
+
+        email.setText(UserEmail);
+        name.setText(UserName);
+        phone.setText(UserNumber);
 
         if (items.size() == 0) {
             items.add(new DataClass(R.drawable.editaccount,"EditAccount",new Intent(profile_settings.this,add_book.class) ));

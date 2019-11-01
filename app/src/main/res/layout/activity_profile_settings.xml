@@ -48,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/profilename"
+                            android:id="@+id/profileSname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Walter H White"
@@ -61,14 +61,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="hiesenberg@gmail.com"
-                            android:id="@+id/profileemail"
+                            android:id="@+id/profileSemail"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:layout_gravity="center_horizontal"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/profilephno"
+                            android:id="@+id/profileSphno"
                             android:text="9731807101"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:layout_gravity="center_horizontal"/>
