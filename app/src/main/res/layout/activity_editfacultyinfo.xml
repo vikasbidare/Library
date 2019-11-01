@@ -75,7 +75,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultyid"
+                    android:id="@+id/editfacultyid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Faculty ID(Ex. F101)"
@@ -93,7 +93,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultyfname"
+                    android:id="@+id/editfacultyfname"
                     android:layout_width="match_parent"
                     android:textColor="@color/black"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultymname"
+                    android:id="@+id/editfacultymname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Middle Name"
@@ -129,7 +129,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultylname"
+                    android:id="@+id/editfacultylname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Last Name"
@@ -147,7 +147,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultydepartment"
+                    android:id="@+id/editfacultydepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Department"
@@ -165,7 +165,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultyphone"
+                    android:id="@+id/editfacultyphone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone Number"
@@ -183,7 +183,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addfacultyemail"
+                    android:id="@+id/editfacultyemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="E-mail ID(abc@xyz.com)"
@@ -201,7 +201,7 @@
                 android:layout_marginBottom="20dp"
                 >
                 <Button
-                    android:id="@+id/CancelHost"
+                    android:id="@+id/editfacultyinfocancelbtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"

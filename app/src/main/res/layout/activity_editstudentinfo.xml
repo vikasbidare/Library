@@ -72,7 +72,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addidnumber"
+                    android:id="@+id/editstudentid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -91,7 +91,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentfname"
+                    android:id="@+id/editstudentfname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue300"
@@ -109,11 +109,11 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentmname"
+                    android:id="@+id/editstudentmname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue300"
-                    android:hint="Middle Name"
+                    android:hint="Middle Name(Optional)"
                     android:textColor="@color/black"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -127,7 +127,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentlname"
+                    android:id="@+id/editstudentlname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue300"
@@ -144,7 +144,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentdepartment"
+                    android:id="@+id/editstudentdepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue300"
@@ -162,7 +162,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentphone"
+                    android:id="@+id/editstudentphone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone Number"
@@ -180,7 +180,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:id="@+id/Addstudentemail"
+                    android:id="@+id/editstudentemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -198,7 +198,7 @@
                 android:layout_marginBottom="20dp"
                 >
                 <Button
-                    android:id="@+id/CancelHost"
+                    android:id="@+id/editstudentcancelbtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"

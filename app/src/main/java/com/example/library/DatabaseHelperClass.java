@@ -440,4 +440,43 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         else
             return true;
     }
+
+    public boolean updateStudent(String ID,String name,String email,String phone,String department)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues studentTableUpdate = new ContentValues();
+        studentTableUpdate.put(studentTableSID,ID);
+        studentTableUpdate.put(studentTableNAME,name);
+        studentTableUpdate.put(studentTableEMAILID,email);
+        studentTableUpdate.put(studentTablePHONE,phone);
+        studentTableUpdate.put(studentTableDEPARTMENT,department);
+
+        int res = db.update(studentTable,studentTableUpdate,studentTableSID+" = ?", new String[] { ID });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean updatefaculty(String ID,String name,String email,String phone,String department)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues facultyTableUpdate = new ContentValues();
+        facultyTableUpdate.put(facultyTableFID,ID);
+        facultyTableUpdate.put(facultyTableNAME,name);
+        facultyTableUpdate.put(facultyTableEMAILID,email);
+        facultyTableUpdate.put(facultyTablePHONE,phone);
+        facultyTableUpdate.put(facultyTableDEPARTMENT,department);
+
+        int res = db.update(facultyTable,facultyTableUpdate,facultyTableFID+" = ?", new String[] { ID });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
 }
