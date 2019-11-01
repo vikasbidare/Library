@@ -24,7 +24,7 @@ public class profile_settings extends AppCompatActivity {
             items.add(new DataClass(R.drawable.editaccount,"EditAccount",new Intent(profile_settings.this,add_book.class) ));
             items.add(new DataClass(R.drawable.share,"ShareApp",new Intent(profile_settings.this,add_student.class) ));
             items.add(new DataClass(R.drawable.terms,"Directions",new Intent(profile_settings.this,terms.class) ));
-            items.add(new DataClass(R.drawable.developers,"Developers",new Intent(profile_settings.this,issue_to_both.class) ));
+            items.add(new DataClass(R.drawable.developers,"Developers",new Intent(profile_settings.this,Developers.class) ));
             items.add(new DataClass(R.drawable.delete,"DeleteAccount",new Intent(profile_settings.this,issue_to_both.class) ));
         }
         ViewAdapter adapter = new ViewAdapter(profile_settings.this, items);
