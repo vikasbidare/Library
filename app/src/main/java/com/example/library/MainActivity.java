@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             items.add(new DataClass(R.drawable.return_book,"Return Book",new Intent(MainActivity.this,return_from_both.class)));
             items.add(new DataClass(R.drawable.show_book,"Show Books",new Intent(MainActivity.this,show_book.class) ));
             items.add(new DataClass(R.drawable.show_student,"Show Students",new Intent(MainActivity.this,show_students.class)));
-            items.add(new DataClass(R.drawable.show_faculty,"Show Faculties",new Intent(MainActivity.this,show_faculty.class)));
+            items.add(new DataClass(R.drawable.show_faculty,"Show Faculty",new Intent(MainActivity.this,show_faculty.class)));
             items.add(new DataClass(R.drawable.edit_info,"Edit Info",new Intent(MainActivity.this,editinfo.class)));
             items.add(new DataClass(R.drawable.history,"Show History",new Intent(MainActivity.this,history_for.class) ));
         }
