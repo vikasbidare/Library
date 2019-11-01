@@ -58,6 +58,8 @@
             android:windowSoftInputMode="stateHidden"/>
 
         <activity android:name=".profile_settings"/>
+        <activity android:name=".terms"/>
+
     </application>
 
 </manifest>
