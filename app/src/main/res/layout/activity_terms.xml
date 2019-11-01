@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<androidx.appcompat.widget.Toolbar
+android:id="@+id/termsToolbar"
+android:layout_width="match_parent"
+android:layout_height="?attr/actionBarSize"
+android:background="@color/blue700"
+android:elevation="4dp"
+android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+app:popupTheme="@style/AlertDialog.AppCompat.Light" >
+/
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="BookEazy"
+    android:textColor="#ffffff"
+    android:textSize="25sp"
+    android:textAllCaps="false"
+    android:fontFamily="sans-serif-medium"
+    />
+
+<ImageView
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:src="@drawable/liblogo"
+    android:scaleType="centerCrop"
+    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp" />
+</androidx.appcompat.widget.Toolbar>
+<ScrollView
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/termsToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/blue700"
-        android:elevation="4dp"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/AlertDialog.AppCompat.Light" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BookEazy"
-            android:textColor="#ffffff"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:fontFamily="sans-serif-medium"
-            />
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/liblogo"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp" />
-    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:layout_width="match_parent"
@@ -84,8 +88,44 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="\t The security question(and answer) you set while signing up as a user in the app is used to reset your password, in case you forget it. Once set, these fields are not changeable or viewable. Hence, its important that you remember these, or you'll lose access to your account if you forget your password.\n\n\t While setting security question/answer, all other fields are made non-accessible. It's important that you ensure you have entered correct details before pressing the 'proceed' button."
+        android:text="\t The security question(and answer) you set while signing up as a user in the app is used to reset your password, in case you forget it. Once set, these fields are not changeable or viewable. Hence, its important that you remember these, or you'll lose access to your account if you forget your password.\n\n\t While setting security question/answer, all other fields are made non-accessible. It's important that you ensure you have entered correct details before pressing the 'proceed' button.\n"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textAlignment="center"
+        android:text="3.Returning and fine amount calculation"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="For Students:\n\t\t If the student returns a book within first two weeks after issuing the book, he/she will not fined. Else, the amount of fine to be paid is Re.1/- per day after the due date(i.e 14 days after issue date)."
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="For Faculty:\n\t\t If the faculty returns a book within first two weeks after issuing the book, he/she will not fined. Else, the amount of fine to be paid is Re.0.5/- per day after the due date(i.e 14 days after issue date)."
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="Lost:\n\t\tIf a student/faculty loses a book, he/she needs to return a new book, which is of the latest edition(regardless of the edition issued). Fine amount will be charged as per the above mentioned rules only."
         />
 
 </LinearLayout>
 </ScrollView>
+</LinearLayout>
