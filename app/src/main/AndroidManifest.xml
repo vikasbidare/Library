@@ -9,9 +9,11 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".book_single_info"
+        <activity android:name=".Developers"></activity>
+        <activity
+            android:name=".book_single_info"
             android:noHistory="true"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".show_faculty" />
         <activity android:name=".show_students" />
         <activity android:name=".faculty_history" />
@@ -21,23 +23,30 @@
         <activity android:name=".show_book" />
         <activity android:name=".return_from_both" />
         <activity android:name=".issue_to_both" />
-        <activity android:name=".ForgotPassword"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".returnfaculty"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".returnstudent"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".issuetofaculty"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".issuetostudent"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".ForgotPassword"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".returnfaculty"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".returnstudent"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".issuetofaculty"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".issuetostudent"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".editinfo" />
         <activity android:name=".edit_account_info" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".editfacultyinfo"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".editstudentinfo"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".editfacultyinfo"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".editstudentinfo"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Login"
             android:label="Library"
@@ -48,18 +57,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".add_faculty"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".add_student"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".add_book"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".sign_up"
-            android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".profile_settings"/>
-        <activity android:name=".terms"/>
-
+        <activity
+            android:name=".add_faculty"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".add_student"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".add_book"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".sign_up"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".profile_settings" />
+        <activity android:name=".terms" />
     </application>
 
 </manifest>
