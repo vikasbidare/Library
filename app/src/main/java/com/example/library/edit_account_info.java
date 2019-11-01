@@ -12,7 +12,7 @@ public class edit_account_info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_account_info);
 
-        Button Editusenamebtn = (Button) findViewById(R.id.editnamebtn);
+        Button Editusernamebtn = (Button) findViewById(R.id.editnamebtn);
         Button Editnumberbtn = (Button) findViewById(R.id.editnumberbtn);
         Button Editpasswordbtn = (Button) findViewById(R.id.editpasswordbtn);
         Button finishbtn = (Button) findViewById(R.id.finishbtn);
