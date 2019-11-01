@@ -71,7 +71,6 @@ public class show_book extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         books.clear();
-
     }
 
 }

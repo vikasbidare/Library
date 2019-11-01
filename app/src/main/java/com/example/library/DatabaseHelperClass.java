@@ -324,6 +324,12 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getAllFromFacultyHistory()
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+facultyHistoryTable,null);
+        return res;
+    }
     public Cursor getFromAdmin(String userId)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();

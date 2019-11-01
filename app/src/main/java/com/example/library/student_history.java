@@ -12,15 +12,15 @@ import java.util.List;
 public class student_history extends AppCompatActivity {
 
     DatabaseHelperClass mydb;
-
+    ArrayList<History> students = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_history);
 
-        ArrayList<History> students = new ArrayList<>();
+
         mydb = new DatabaseHelperClass(student_history.this);
-        final Cursor tempDB = mydb.getAllFromStudentHistory();
+         Cursor tempDB = mydb.getAllFromStudentHistory();
 
         while (tempDB.moveToNext())
         {
@@ -31,5 +31,12 @@ public class student_history extends AppCompatActivity {
         ListView studenthistory = (ListView) findViewById(R.id.studentHistoryListView);
         StudentAdapter adapt = new StudentAdapter(student_history.this,0,students);
         studenthistory.setAdapter(adapt);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        students.clear();
     }
 }

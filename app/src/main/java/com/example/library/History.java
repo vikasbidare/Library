@@ -30,8 +30,6 @@ public class History {
             return "-------";
         else
             return mreturnDate;
-
-
     }
 
     public String getmIssueDate() {
