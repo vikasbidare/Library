@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class faculty_history extends AppCompatActivity {
 
@@ -28,10 +29,14 @@ public class faculty_history extends AppCompatActivity {
                     tempDB.getString(3),tempDB.getString(4)));
         }
 
+        Collections.reverse(faculty);
+
         ListView facultyHistory = (ListView) findViewById(R.id.facultyHistoryListView);
         FacultyAdapter adapt = new FacultyAdapter(faculty_history.this,0,faculty);
         facultyHistory.setAdapter(adapt);
     }
+
+
 
     @Override
     protected void onDestroy() {

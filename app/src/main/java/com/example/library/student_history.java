@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class student_history extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class student_history extends AppCompatActivity {
             students.add(new History(tempDB.getString(1),tempDB.getString(0),tempDB.getString(2),
                     tempDB.getString(3),tempDB.getString(4)));
         }
+
+        Collections.reverse(students);
 
         ListView studenthistory = (ListView) findViewById(R.id.studentHistoryListView);
         StudentAdapter adapt = new StudentAdapter(student_history.this,0,students);

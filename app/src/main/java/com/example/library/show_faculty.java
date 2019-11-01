@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class show_faculty extends AppCompatActivity {
 
@@ -27,6 +28,8 @@ public class show_faculty extends AppCompatActivity {
             publics.add(new Designation(tempDB.getString(1),tempDB.getString(2),tempDB.getString(3),tempDB.getString(4)
                     ,tempDB.getString(0)));
         }
+
+        Collections.reverse(publics);
 
         ListView studentView = (ListView) findViewById(R.id.showFacultyListView);
         ShowPersonAdapter madapter = new ShowPersonAdapter(show_faculty.this,0,publics);
