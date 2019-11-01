@@ -331,6 +331,15 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getFromFacultyHistory(String facultyID, String bookID)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+facultyHistoryTable + " where "+facultyHistoryTableBID +"= ? and " +
+                facultyHistoryTableISSUERID + "= ? and " + facultyHistoryTableRETURNDATE +" is null"
+                ,new String[]{bookID,facultyID});
+        return res;
+    }
+
     public boolean updatePassword(String userID, String newpassword)
     {
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
@@ -340,6 +349,26 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         loginTableUpdate.put(loginTablePASSWORD,newpassword);
 
         int res = db.update(loginTable,loginTableUpdate,loginTableUID+" = ?", new String[] { userID });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean updateFacultyHistoryTable(String bookid, String facultyid,String IssueDate, String ReturnDate,String Fineamt)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues facultyHistoryTableUpdate = new ContentValues();
+        facultyHistoryTableUpdate.put(facultyHistoryTableBID,bookid);
+        facultyHistoryTableUpdate.put(facultyHistoryTableISSUERID,facultyid);
+        facultyHistoryTableUpdate.put(facultyHistoryTableISSUEDATE,IssueDate);
+        facultyHistoryTableUpdate.put(facultyHistoryTableRETURNDATE,ReturnDate);
+        facultyHistoryTableUpdate.put(facultyHistoryTableFINEAMT,Fineamt);
+
+        int res = db.update(facultyHistoryTable,facultyHistoryTableUpdate,facultyHistoryTableBID+" = ? and "+
+                facultyHistoryTableISSUERID+ " = ? and "+facultyHistoryTableRETURNDATE+ " is null", new String[] { bookid,facultyid });
 
         if(res==0)
             return false;
