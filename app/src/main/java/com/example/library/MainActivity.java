@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -60,10 +61,15 @@ public class MainActivity extends AppCompatActivity {
 //        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
-        Intent intentFrom = getIntent();
-        UserEmail = intentFrom.getStringExtra("UserEmail");
-        UserName = intentFrom.getStringExtra("Name");
-        UserNumber =intentFrom.getStringExtra("PhoneNumber");
+//        Intent intentFrom = getIntent();
+//        UserEmail = intentFrom.getStringExtra("UserEmail");
+//        UserName = intentFrom.getStringExtra("Name");
+//        UserNumber =intentFrom.getStringExtra("PhoneNumber");
+
+        SharedPreferences prefs = getSharedPreferences("MyFiles", MODE_PRIVATE);
+        String UserEmail = prefs.getString("UserEmail", "mailme.vikasb@gmail.com");//"No name defined" is the default value.
+        String UserNumber = prefs.getString("PhoneNumber", "9731807100"); //0 is the default value.
+        String UserName = prefs.getString("Name", "Vikas BN");
 
         TextView email = (TextView) findViewById(R.id.profileemail);
         TextView name = (TextView) findViewById(R.id.profilename);

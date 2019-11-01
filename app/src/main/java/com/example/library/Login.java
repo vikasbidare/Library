@@ -2,6 +2,7 @@ package com.example.library;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,6 +27,8 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         myDB = new DatabaseHelperClass(Login.this);
+
+        final SharedPreferences.Editor preferences = getSharedPreferences("MyFiles",MODE_PRIVATE).edit();
 
         TextView signUp = (TextView) findViewById(R.id.signUp);
         final EditText Username = findViewById(R.id.username);
@@ -74,11 +77,16 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Sign-in Successful", Toast.LENGTH_SHORT).show();
                         Cursor Tempdb = myDB.getFromAdmin(email);
                         Intent intentToMainActivity = new Intent(Login.this, MainActivity.class);
-                        intentToMainActivity.putExtra("UserEmail",email);
+//                        intentToMainActivity.putExtra("UserEmail",email);
                         if (!Tempdb.moveToFirst())
                             Tempdb.moveToFirst();
-                        intentToMainActivity.putExtra("PhoneNumber",Tempdb.getString(2));
-                        intentToMainActivity.putExtra("Name",Tempdb.getString(1));
+//                        intentToMainActivity.putExtra("PhoneNumber",Tempdb.getString(2));
+//                        intentToMainActivity.putExtra("Name",Tempdb.getString(1));
+
+                        preferences.putString("UserEmail", email);
+                        preferences.putString("PhoneNumber", Tempdb.getString(2));
+                        preferences.putString("Name", Tempdb.getString(1));
+                        preferences.apply();
                         startActivity(intentToMainActivity);
                     }
                     else
