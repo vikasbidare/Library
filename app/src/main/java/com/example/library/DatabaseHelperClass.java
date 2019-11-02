@@ -512,19 +512,20 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     public boolean deletefromStudent(String sid){
         SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
-        Cursor student = db.rawQuery("select * from "+ studentHistoryTable+ " where "+studentHistoryTableRETURNDATE+ " is null and "+
-                studentHistoryTableISSUERID +" ="+sid, null);
+        Cursor student = db.rawQuery("select * from "+ studentHistoryTable+ " where "+studentHistoryTableISSUERID +" = ? and "
+                        +studentHistoryTableRETURNDATE+ " is null"
+                , new String[]{sid});
         if(student.getCount() == 0)
         {
-            return false;
-        }
-        {
-            int res1 = db.delete(studentTable,studentTableSID+" = ?",new String[] {sid});
+            int res1 = db.delete(studentTable, studentTableSID + " = ?", new String[]{sid});
 
-            if(res1==0)
+            if (res1 == 0)
                 return false;
             else
                 return true;
+        }
+        else {
+            return false;
         }
     }
 

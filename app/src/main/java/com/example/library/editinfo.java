@@ -27,7 +27,7 @@ public class editinfo extends AppCompatActivity {
         deletestudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in1 = new Intent(editinfo.this,editstudentinfo.class);
+                Intent in1 = new Intent(editinfo.this,delete_student.class);
                 startActivity(in1);
             }
         });
