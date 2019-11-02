@@ -19,9 +19,12 @@ import android.widget.Toast;
 
 public class edit_account_info extends AppCompatActivity {
 
-    String newUserName, newUserNumber , newUserPassword , newUserPasswordConfirm,userid,oldname,oldphone;
+    String newUserName, newUserPassword , newUserPasswordConfirm,userid,oldname,oldphone;
     Boolean nameempty = false;
+    Boolean passwordempty = false;
     DatabaseHelperClass mydb;
+    String MobilePattern = "[0-9]{10}";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,175 @@ public class edit_account_info extends AppCompatActivity {
                 });
 
                 builder.show();
+            }
+        });
+
+
+
+        Editnumberbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_account_info.this);
+
+                final TextView editusernumber = new TextView(edit_account_info.this);
+                editusernumber.setText("New User's Number");
+                editusernumber.setTextAppearance(edit_account_info.this, android.R.style.TextAppearance_Large);
+                editusernumber.setTextColor(getResources().getColor(R.color.blue300));
+                editusernumber.setPadding(20,20,20,20);
+                editusernumber.setGravity(Gravity.CENTER);
+                editusernumber.setTextSize(20);
+                editusernumber.setTypeface(editusernumber.getTypeface(), Typeface.BOLD);
+                editusernumber.setWidth(-1);
+                builder.setCustomTitle(editusernumber);
+
+                LinearLayout container = new LinearLayout(edit_account_info.this);
+                container.setOrientation(LinearLayout.VERTICAL);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                lp.setMargins(40,20,40,20);
+                final EditText input = new EditText(edit_account_info.this);
+                input.setLayoutParams(lp);
+                input.setGravity(android.view.Gravity.TOP|android.view.Gravity.LEFT);
+                input.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES|InputType.TYPE_CLASS_PHONE);
+                input.setLines(1);
+                input.setMaxLines(1);
+                container.addView(input, lp);
+
+                builder.setView(container);
+
+// Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        newUserPassword = input.getText().toString().trim();
+                        passwordempty = false;
+                        if(newUserPassword.isEmpty())
+                        {
+                            passwordempty = true;
+                        }
+
+                        if(!newUserPassword.matches(MobilePattern))
+                        {
+                            Toast.makeText(edit_account_info.this, "Enter Valid Number", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        if(!passwordempty)
+                        {
+                            boolean isUpdated = mydb.updateAdminTable(oldname,userid, newUserPassword);
+
+                            if(isUpdated)
+                            {
+                                Toast.makeText(edit_account_info.this, "UserNumber Updated", Toast.LENGTH_SHORT).show();
+                                oldphone = newUserPassword;
+                                settingsEditor.putString("PhoneNumber",oldphone);
+                                settingsEditor.apply();
+                                dialog.cancel();
+
+                            }
+                            else
+                            {
+                                Toast.makeText(edit_account_info.this, "Try Again!!!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(edit_account_info.this, "Field Cant be Empty\n Try Again!!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
+
+
+        Editpasswordbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_account_info.this);
+
+                final TextView edituserpassword = new TextView(edit_account_info.this);
+                edituserpassword.setText("New Password");
+                edituserpassword.setTextAppearance(edit_account_info.this, android.R.style.TextAppearance_Large);
+                edituserpassword.setTextColor(getResources().getColor(R.color.blue300));
+                edituserpassword.setPadding(20,20,20,20);
+                edituserpassword.setGravity(Gravity.CENTER);
+                edituserpassword.setTextSize(20);
+                edituserpassword.setTypeface(edituserpassword.getTypeface(), Typeface.BOLD);
+                edituserpassword.setWidth(-1);
+                builder.setCustomTitle(edituserpassword);
+
+                LinearLayout container = new LinearLayout(edit_account_info.this);
+                container.setOrientation(LinearLayout.VERTICAL);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                lp.setMargins(40,20,40,20);
+                final EditText input = new EditText(edit_account_info.this);
+                input.setLayoutParams(lp);
+                input.setGravity(android.view.Gravity.TOP|android.view.Gravity.LEFT);
+                input.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES|InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+                input.setLines(1);
+                input.setMaxLines(1);
+                container.addView(input, lp);
+
+                builder.setView(container);
+
+// Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        newUserPassword = input.getText().toString().trim();
+                        passwordempty = false;
+                        if(newUserPassword.isEmpty())
+                        {
+                            passwordempty = true;
+                        }
+
+                        if(!passwordempty)
+                        {
+                            boolean isUpdated = mydb.updatePassword(userid, newUserPassword);
+
+                            if(isUpdated)
+                            {
+                                Toast.makeText(edit_account_info.this, "Password Changed", Toast.LENGTH_SHORT).show();
+                                dialog.cancel();
+
+                            }
+                            else
+                            {
+                                Toast.makeText(edit_account_info.this, "Try Again!!!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(edit_account_info.this, "Field Cant be Empty\n Try Again!!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
+        finishbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToprofilesettings = new Intent(edit_account_info.this,profile_settings.class);
+                startActivity(intentToprofilesettings);
             }
         });
     }
