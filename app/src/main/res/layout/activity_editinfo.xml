@@ -45,6 +45,18 @@
         android:layout_margin="20dp"
         android:layout_gravity="center"
         />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="Delete student"
+        android:id="@+id/deletestudentbtn"
+        android:textColor="#ffffff"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        />
+
     <Button
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -56,8 +68,15 @@
         android:layout_gravity="center"
         />
 
-
-
-
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="delete faculty"
+        android:id="@+id/deletefacultybtn"
+        android:textColor="#ffffff"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>

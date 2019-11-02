@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".delete_account"></activity>
+        <activity android:name=".delete_faculty"></activity>
+        <activity android:name=".delete_account" />
         <activity
             android:name=".conformation"
             android:noHistory="true" />

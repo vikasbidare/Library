@@ -23,12 +23,30 @@ public class editinfo extends AppCompatActivity {
             }
         });
 
+        Button deletestudent = (Button) findViewById(R.id.deletestudentbtn);
+        deletestudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in1 = new Intent(editinfo.this,editstudentinfo.class);
+                startActivity(in1);
+            }
+        });
+
         Button editfaculty = (Button) findViewById(R.id.editfacultyInfobtn);
         editfaculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in2 = new Intent(editinfo.this,editfacultyinfo.class);
                 startActivity(in2);
+            }
+        });
+
+        Button deletefaculty = (Button) findViewById(R.id.deletefacultybtn);
+        deletefaculty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in1 = new Intent(editinfo.this,delete_faculty.class);
+                startActivity(in1);
             }
         });
   }

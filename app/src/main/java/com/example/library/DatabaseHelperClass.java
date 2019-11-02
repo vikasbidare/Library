@@ -510,4 +510,42 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     }
 
+    public boolean deletefromStudent(String sid){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+        Cursor student = db.rawQuery("select * from "+ studentHistoryTable+ " where "+studentHistoryTableRETURNDATE+ " is null and "+
+                studentHistoryTableISSUERID +" ="+sid, null);
+        if(student.getCount() == 0)
+        {
+            return false;
+        }
+        {
+            int res1 = db.delete(studentTable,studentTableSID+" = ?",new String[] {sid});
+
+            if(res1==0)
+                return false;
+            else
+                return true;
+        }
+    }
+
+    public boolean deletefromFaculty(String fid){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        Cursor faculty = db.rawQuery("select * from "+ facultyHistoryTable+ " where "+facultyHistoryTableISSUERID +" = ? and "
+                        +facultyHistoryTableRETURNDATE+ " is null"
+                , new String[]{fid});
+        if(faculty.getCount() == 0)
+        {
+            int res1 = db.delete(facultyTable, facultyTableFID + " = ?", new String[]{fid});
+
+            if (res1 == 0)
+                return false;
+            else
+                return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
