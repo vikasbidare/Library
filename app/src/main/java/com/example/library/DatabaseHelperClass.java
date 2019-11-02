@@ -497,4 +497,17 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             return true;
     }
 
+    public boolean deletefromAdmin(String email){
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        int res1 = db.delete(adminTable,adminTableID+" = ?",new String[] {email});
+        int res2 = db.delete(loginTable,loginTableUID+" = ?",new String[] {email});
+
+        if(res1==0 || res2==0)
+            return false;
+        else
+            return true;
+
+    }
+
 }
