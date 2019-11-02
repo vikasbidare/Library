@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Enter your details"
+        android:text="Edit Personal Info"
         android:layout_marginBottom="20dp"
         android:textColor="@color/blue300"
         android:textAlignment="center"

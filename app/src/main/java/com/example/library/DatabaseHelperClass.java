@@ -479,4 +479,22 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             return true;
     }
 
+    public boolean updateAdminTable(String newname , String id , String newphone)
+    {
+        SQLiteDatabase db = DatabaseHelperClass.this.getWritableDatabase();
+
+        ContentValues adminTableUpdate = new ContentValues();
+        adminTableUpdate.put(adminTableNAME,newname);
+        adminTableUpdate.put(adminTableNUMBER,newphone);
+        adminTableUpdate.put(adminTableID,id);
+
+
+        int res = db.update(adminTable,adminTableUpdate,adminTableID+" = ?", new String[] { id });
+
+        if(res==0)
+            return false;
+        else
+            return true;
+    }
+
 }

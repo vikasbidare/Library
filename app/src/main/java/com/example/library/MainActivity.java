@@ -38,6 +38,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+
+
+        SharedPreferences prefs = getSharedPreferences("MyFiles", MODE_PRIVATE);
+        String UserEmail = prefs.getString("UserEmail", "mailme.vikasb@gmail.com");//"No name defined" is the default value.
+        String UserNumber = prefs.getString("PhoneNumber", "9731807100"); //0 is the default value.
+        String UserName = prefs.getString("Name", "Vikas BN");
+
+
+        TextView email = (TextView) findViewById(R.id.profileemail);
+        TextView name = (TextView) findViewById(R.id.profilename);
+        TextView phone = (TextView) findViewById(R.id.profilephno);
+
+
+        email.setText(UserEmail);
+        name.setText(UserName);
+        phone.setText(UserNumber);
+
+    }
+
+    @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             Intent s = new Intent(Intent.ACTION_MAIN);

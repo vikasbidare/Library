@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/liblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Developers"></activity>
+        <activity android:name=".conformation"
+            android:noHistory="true"></activity>
+        <activity android:name=".Developers" />
         <activity
             android:name=".book_single_info"
             android:noHistory="true"

@@ -59,4 +59,5 @@
     <string name="showStudents">Show Students</string>
     <string name="showFaculty">Show Faculty</string>
     <string name="editaccountinfoTitle">Edit Account Info</string>
+    <string name="confirmDetails">Enter Credentials To Proceed</string>
 </resources>

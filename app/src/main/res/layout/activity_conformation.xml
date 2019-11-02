@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".conformation"
+    android:background="@color/colorAccentDark"
+    android:fitsSystemWindows="true">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/conformationtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue700"
+        android:layout_marginBottom="20dp"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AlertDialog.AppCompat.Light"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toolbarTitle"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/liblogo"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="184dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    tools:ignore="MissingConstraints"></Space>
+
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/confirmDetails"
+                    android:textColor="@color/blue300"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
+
+                    <EditText
+                        android:id="@+id/ConfirmEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="@color/blue300"
+                        android:hint="@string/signUpEmail"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/conformCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="CrossCheck Email"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/round_button"
+                    android:textSize="15sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/ConformSecurityLayout">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black">
+                        <EditText
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/conformsecurityquestion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:hint="Your Security Question"
+                            android:backgroundTint="@color/blue300"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black">
+                        <EditText
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/conformsecurityanswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:hint="Your Answer"
+                            android:backgroundTint="@color/blue300"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal"
+                        >
+                        <Button
+                            android:id="@+id/conformvalidatebtn"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:text="Validate"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/round_button"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
