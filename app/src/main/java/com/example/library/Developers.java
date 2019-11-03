@@ -16,8 +16,8 @@ public class Developers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developers);
 
-        TextView rcs1 = (TextView) findViewById(R.id.developersLinkedIn1);
-        rcs1.setOnClickListener(new View.OnClickListener() {
+        TextView dev1 = (TextView) findViewById(R.id.developersLinkedIn1);
+        dev1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -29,6 +29,23 @@ public class Developers extends AppCompatActivity {
                     startActivity(linkedinIntent);
                 } catch ( ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/dhanuesh-r-c-167478172")));
+                }
+            }
+        });
+
+        TextView dev2 = (TextView) findViewById(R.id.developersLinkedIn2);
+        dev1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent linkedinIntent2 = new Intent(Intent.ACTION_VIEW);
+                linkedinIntent2.setClassName("com.linkedin.android", "com.linkedin.android.profile.ViewProfileActivity");
+                linkedinIntent2.putExtra("memberId", "vikas-b-n-11b5a6162/");
+                linkedinIntent2.setPackage("com.linkedin.android");
+                try {
+                    startActivity(linkedinIntent2);
+                } catch ( ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/vikas-b-n-11b5a6162/")));
                 }
             }
         });

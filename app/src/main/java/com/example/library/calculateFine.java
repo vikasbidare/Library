@@ -24,7 +24,7 @@ public class calculateFine {
             }
             else
             {
-                return  1000;
+                return  0.00;
             }
         } catch (ParseException e) {
             e.printStackTrace();

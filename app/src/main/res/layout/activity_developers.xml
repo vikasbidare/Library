@@ -35,22 +35,31 @@
             android:layout_marginStart="20dp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/developersID"
-        >
+        android:layout_height="wrap_content"
+        android:text="Developers"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/blue300"
+        android:gravity="center"
+        android:padding="20dp"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/showStudentCardView"
+            android:id="@+id/showStudent1CardView"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             app:cardElevation="60dp"
             app:cardCornerRadius="20dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/blue300">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,7 +73,7 @@
                     android:id="@+id/profileDP"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
-                    android:src="@drawable/liblogo"
+                    android:src="@drawable/dhanuesh"
                     android:scaleType="centerCrop"
                     android:layout_centerHorizontal="true"
                     android:elevation="1dp"/>
@@ -84,6 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:textColor="#ffffff"
                         android:text="DHANUESH R C"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
@@ -100,6 +110,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="dhanueshrc28@gmail.com"
                         android:gravity="center"
                         android:layout_marginLeft="5dp"
@@ -119,6 +130,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="CSE--NITK"
+                            android:textColor="#ffffff"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
@@ -137,6 +149,7 @@
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="---"
+                            android:textColor="#ffffff"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
@@ -150,6 +163,7 @@
                             android:id="@+id/developersLinkedIn1"
                             android:text="LinkedIn Profile"
                             android:layout_marginTop="10dp"
+                            android:textColor="@color/blue700"
                             android:layout_marginBottom="10dp"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:textSize="15sp"
@@ -160,6 +174,7 @@
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="---"
+                            android:textColor="#ffffff"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
@@ -172,8 +187,153 @@
 
             </LinearLayout>
 
+
+
         </androidx.cardview.widget.CardView>
 
-    </ScrollView>
+            <androidx.cardview.widget.CardView
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/showStudent2CardView"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:backgroundTint="@color/blue300"
+                app:cardElevation="60dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile2DP"
+                        android:layout_height="150dp"
+                        android:layout_width="150dp"
+                        android:src="@drawable/vikas"
+
+                        android:scaleType="centerCrop"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="1dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="VIKAS B N"
+                                android:textColor="#ffffff"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="mailme.vikasb@gmail.com"
+                                android:textColor="#ffffff"
+                                android:gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="CSE--NITK"
+                                android:textColor="#ffffff"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:gravity="end"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="---"
+                                android:textColor="#ffffff"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                            <TextView
+                                android:gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/developersLinkedIn2"
+                                android:text="LinkedIn Profile"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/blue700"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                            <TextView
+                                android:gravity="start"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="---"
+                                android:textColor="#ffffff"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
 </LinearLayout>

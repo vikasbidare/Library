@@ -124,10 +124,9 @@ public class returnstudent extends AppCompatActivity {
 
                                 if (res / (1000 * 60 * 60 * 24) - 14 > 0) {
                                     res = (res / (1000 * 60 * 60 * 24) - 14);
-                                    res = res / 2;
-                                    fineamt = res + " /-";
+                                    fineamt = res + "/-";
                                 } else {
-                                    fineamt = "0.00 /-";
+                                    fineamt = "0.00/-";
                                 }
                                 FineAmt.setText(fineamt);
 
