@@ -61,7 +61,7 @@ public class profile_settings extends AppCompatActivity {
         Intent intentTOShareApp = new Intent();
         intentTOShareApp.setAction(Intent.ACTION_SEND);
         intentTOShareApp.putExtra(Intent.EXTRA_TEXT,
-                "Hey there!\nDownload this new app,'BookEazy' to ease out the management of libraries\nlink");
+                "Hey there!\nDownload this new app,'BookEazy' to ease out the management of libraries\nhttps://drive.google.com/open?id=1poXP1K4cvjXda4LWva9lePTc_IzA7Bjo");
         intentTOShareApp.setType("text/plain");
         if (items.size() == 0) {
             items.add(new DataClass(R.drawable.editaccount,"EditAccount",new Intent(profile_settings.this,conformation.class) ));
