@@ -114,7 +114,7 @@ public class add_book extends AppCompatActivity {
                         startActivity(submitIntent);
                     }
                     else{
-                        Toast.makeText(add_book.this,"Book already exists",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(add_book.this,"BookID already given",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
