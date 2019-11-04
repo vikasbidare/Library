@@ -44,6 +44,11 @@
         android:gravity="center"
         android:padding="20dp"
         />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -336,4 +341,6 @@
 
 
         </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

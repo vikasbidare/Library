@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.drm.DrmStore;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -57,9 +58,14 @@ public class profile_settings extends AppCompatActivity {
         name.setText(UserName);
         phone.setText(UserNumber);
 
+        Intent intentTOShareApp = new Intent();
+        intentTOShareApp.setAction(Intent.ACTION_SEND);
+        intentTOShareApp.putExtra(Intent.EXTRA_TEXT,
+                "Hey there!\nDownload this new app,'BookEazy' to ease out the management of libraries\nlink");
+        intentTOShareApp.setType("text/plain");
         if (items.size() == 0) {
             items.add(new DataClass(R.drawable.editaccount,"EditAccount",new Intent(profile_settings.this,conformation.class) ));
-            items.add(new DataClass(R.drawable.share,"ShareApp",new Intent(profile_settings.this,add_student.class) ));
+            items.add(new DataClass(R.drawable.share,"ShareApp",intentTOShareApp ));
             items.add(new DataClass(R.drawable.directions,"Directions",new Intent(profile_settings.this,terms.class) ));
             items.add(new DataClass(R.drawable.delete,"DeleteAccount",new Intent(profile_settings.this,delete_account.class) ));
             items.add(new DataClass(R.drawable.developers,"Developers",new Intent(profile_settings.this,Developers.class) ));

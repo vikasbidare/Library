@@ -15,6 +15,9 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class returnstudent extends AppCompatActivity {
 
@@ -114,19 +117,28 @@ public class returnstudent extends AppCompatActivity {
                                 Date IssueDate = null, ReturnDates = null;
 
                                 try {
-                                    IssueDate = new SimpleDateFormat("DD-MM-YYYY").parse(historyDB.getString(2));
-                                    ReturnDates = new SimpleDateFormat("DD-MM-YYYY").parse(returndate);
+                                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                                    IssueDate = sdf.parse(historyDB.getString(2).toString().trim());
+                                    ReturnDates = sdf.parse(returndate);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
 
                                 long res = ReturnDates.getTime() - IssueDate.getTime();
-
-                                if (res / (1000 * 60 * 60 * 24) - 14 > 0) {
-                                    res = (res / (1000 * 60 * 60 * 24) - 14);
-                                    fineamt = res + "/-";
-                                } else {
-                                    fineamt = "0.00/-";
+//                                if (((res / (1000 * 60 * 60 * 24)) - 14) > 0) {
+//                                    res = ((res / (1000 * 60 * 60 * 24)) - 14);
+//                                    fineamt = res + "/-";
+//                                } else {
+//                                    fineamt = "0.00/-";
+//                                }
+                                long res1 = TimeUnit.DAYS.convert(res,TimeUnit.MILLISECONDS);
+                                if(res1 - 14>0)
+                                {
+                                    fineamt = res1-14+ "/-";
+                                }
+                                else
+                                {
+                                    fineamt = 0.00+"/-";
                                 }
                                 FineAmt.setText(fineamt);
 

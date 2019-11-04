@@ -12,8 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class returnfaculty extends AppCompatActivity {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class returnfaculty extends AppCompatActivity {
     DatabaseHelperClass myDB;
     String bookid, facultyid , returndate ,fineamt;
     Boolean isEmpty = false;
@@ -110,7 +112,7 @@ public class returnfaculty extends AppCompatActivity {
 
                                 Process.setClickable(false);
                                 calculateFine fine = new calculateFine();
-                                fineamt = fine.fineForFaculty(historyDB.getString(2) , returndate) + " ";
+                                fineamt = fine.fineForFaculty(historyDB.getString(2) , returndate) + "/-";
                                 FineAmt.setText(fineamt);
 
                                 Cancel.setOnClickListener(new View.OnClickListener() {

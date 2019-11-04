@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class issuetostudent extends AppCompatActivity {
 
     String bid,sid,issuedate;
@@ -23,6 +26,7 @@ public class issuetostudent extends AppCompatActivity {
         final EditText editbid = (EditText) findViewById(R.id.studentissuebookid);
         final EditText editsid = (EditText) findViewById(R.id.studentissuestudentid);
         final EditText editdate = (EditText) findViewById(R.id.studentissuedate);
+
 
         myDB = new DatabaseHelperClass(issuetostudent.this);
 
@@ -65,7 +69,6 @@ public class issuetostudent extends AppCompatActivity {
                     editdate.setError("Enter IssueDate");
                     isEmpty = true;
                 }
-
                 if(!isEmpty)
                 {
                     Cursor tempdb = myDB.getAboutABook(bid);

@@ -34,7 +34,7 @@ public class Developers extends AppCompatActivity {
         });
 
         TextView dev2 = (TextView) findViewById(R.id.developersLinkedIn2);
-        dev1.setOnClickListener(new View.OnClickListener() {
+        dev2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
